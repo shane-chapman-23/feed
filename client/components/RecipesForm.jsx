@@ -1,6 +1,8 @@
 import React from 'react'
 
-class Form extends React.Component {
+import IngredientsForm from './IngredientsForm'
+
+class RecipesForm extends React.Component {
   
   state = {
     recipe_name: "",
@@ -8,10 +10,7 @@ class Form extends React.Component {
     image: "",
     prep_time: "",
     cook_time: "",
-    food_category: "",
-    ingredients: [],
-    quantity: [],
-    measurements: []
+    food_category: ""
   }
 
   handleChange = (event) => {
@@ -21,10 +20,7 @@ class Form extends React.Component {
       image: event.target.image,
       prep_time: event.target.prep_time,
       cook_time: event.target.cook_time,
-      food_category: event.target.food_category,
-      ingredients: event.target.ingredients,
-      quantity: event.target.quantity,
-      measurements: event.target.measurements
+      food_category: event.target.food_category
     })
   }
 
@@ -43,9 +39,7 @@ class Form extends React.Component {
           <br></br><input type="text" value={this.state.prep_time} onChange={this.handleChange} placeholder="Prep time"></input>
           <br></br><input type="text" value={this.state.cook_time} onChange={this.handleChange} placeholder="Cook time"></input>
           <br></br><input type="text" value={this.state.food_category} onChange={this.handleChange} placeholder="Food category"></input>
-          <br></br><input type="text" value={this.state.ingredients} onChange={this.handleChange} placeholder="Ingredients"></input>
-          <br></br><input type="text" value={this.state.quantity} onChange={this.handleChange} placeholder="Quantity"></input>
-          <br></br><input type="text" value={this.state.measurements} onChange={this.handleChange} placeholder="Measurements"></input>
+          <IngredientsForm />
           <br></br><input type="submit" value="submit" />
         </form>
       </div>
@@ -53,4 +47,4 @@ class Form extends React.Component {
   }
 }
 
-export default Form
+export default RecipesForm

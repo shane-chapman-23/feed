@@ -1,6 +1,6 @@
 import React from 'react'
 // import Home from './Home'
-import Form from './Form'
+import RecipesForm from './RecipesForm'
 
 // const recipes =
 //   [
@@ -18,7 +18,7 @@ const App = () => {
         <ul>{recipes.map(recipes => <li key={recipes.id}> {recipes.name}</li>)}</ul> */}
         <div>
           {/* <Home /> */}
-          <Form />
+          <RecipesForm />
         </div>
       </>
   )
