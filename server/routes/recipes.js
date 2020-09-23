@@ -22,3 +22,12 @@ const id = req.params.id
       res.json({ingredients: callback})
     })
 })
+
+//get recipe steps
+router.get('/api/steps/:id', (req, res) => {
+  const id = req.params.id
+  db.getSteps(id)
+    .then(callback => {
+      res.json({steps: callback})
+    })
+})
