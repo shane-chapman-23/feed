@@ -4,15 +4,11 @@ module.exports = {
 
   development: {
     client: 'sqlite3',
-<<<<<<< HEAD
-=======
     useNullAsDefault: true,
->>>>>>> 0a35cddb59d91fd52051fd2fca466fc117dd8845
     connection: {
       filename: './dev.sqlite3'
     }
   },
-
   staging: {
     client: 'postgresql',
     connection: {
