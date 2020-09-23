@@ -5,7 +5,7 @@ import Recipes from './Recipes'
 const Home = () => {
   return (
     <>
-    <h1 className="centerText bigText">Tea Time</h1>
+    <h1 className="center_text big_text">Tea Time</h1>
       <Recipes />
     </>
   )

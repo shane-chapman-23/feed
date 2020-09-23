@@ -1,9 +1,18 @@
-.centerText {
+.center_text {
   text-align: center;
 }
 
-.bigText {
+.left_text {
+  text-align: left;
+}
+
+.big_text {
   font-size: 230px;
+}
+
+.dish_name {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .cards {
@@ -13,6 +22,7 @@
   display: inline-block;
 }
 
-.cards p{
-  padding: 0%;
+.card_margins{
+  margin-top: 0%;
+  margin-bottom: 0%;
 }
