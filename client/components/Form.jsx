@@ -35,7 +35,7 @@ class Form extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="center_text">
         <form onSubmit={this.handleSubmit}>
           <input type="text" value={this.state.recipe_name} onChange={this.handleChange} placeholder="Recipe name"></input>
           <br></br><input type="text" value={this.state.recipe_description} onChange={this.handleChange} placeholder="Recipe description"></input>
