@@ -3,10 +3,17 @@ const config = require('../knexfile')[environment]
 const database = require('knex')(config)
 
 module.exports = {
-    getRecipes
+    getRecipes,
+    getRecipeDetails
 }
 
 function getRecipes (db = database) {
     return db('recipes')
-    .select()
+}
+
+function getRecipeDetails (id, db = database){
+  return db('quantities')
+        .join('recipes', 'recipes.id', 'quantities.recipe_id')
+        .where('recipes.id', id)
+        .select('ingredient_id', 'ingredient_quantity', 'measurement_id')
 }
