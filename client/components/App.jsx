@@ -1,6 +1,7 @@
 import React from 'react'
 // import Home from './Home'
 import RecipesForm from './RecipesForm'
+// import { AddIngredient } from '/'
 
 // const recipes =
 //   [

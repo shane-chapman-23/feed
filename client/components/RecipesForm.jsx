@@ -1,6 +1,7 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
-import IngredientsForm from './IngredientsForm'
+// import IngredientsForm from './IngredientsForm'
 
 class RecipesForm extends React.Component {
   
@@ -10,8 +11,12 @@ class RecipesForm extends React.Component {
     image: "",
     prep_time: "",
     cook_time: "",
-    food_category: ""
+    food_category: "",
+    // ingredient_quantities: []
   }
+
+  // addIngredient = (ingredientId, quantity, measurementId) => {
+  // }
 
   handleChange = (event) => {
     this.setState({
@@ -25,6 +30,7 @@ class RecipesForm extends React.Component {
   }
 
   handleSubmit = (event) => {
+    console.log(this.state)
     event.preventDefault()
     alert('Submitted: ' + this.state);
   }
@@ -32,19 +38,17 @@ class RecipesForm extends React.Component {
   render() {
     return(
       <div className="center_text">
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" value={this.state.recipe_name} onChange={this.handleChange} placeholder="Recipe name"></input>
-          <br></br><input type="text" value={this.state.recipe_description} onChange={this.handleChange} placeholder="Recipe description"></input>
-          <br></br><input type="text" value={this.state.image} onChange={this.handleChange} placeholder="Image url"></input>
-          <br></br><input type="text" value={this.state.prep_time} onChange={this.handleChange} placeholder="Prep time"></input>
-          <br></br><input type="text" value={this.state.cook_time} onChange={this.handleChange} placeholder="Cook time"></input>
-          <br></br><input type="text" value={this.state.food_category} onChange={this.handleChange} placeholder="Food category"></input>
-          <IngredientsForm />
-          <br></br><input type="submit" value="submit" />
-        </form>
+          <input name='recipe_name' value={this.state.recipe_name} onChange={this.handleChange} placeholder="Recipe name"></input>
+          <br></br><input name='recipe_description' value={this.state.recipe_description} onChange={this.handleChange} placeholder="Recipe description"></input>
+          <br></br><input name="image" value={this.state.image} onChange={this.handleChange} placeholder="Image url"></input>
+          <br></br><input name="prep_time" value={this.state.prep_time} onChange={this.handleChange} placeholder="Prep time"></input>
+          <br></br><input name="cook_time" value={this.state.cook_time} onChange={this.handleChange} placeholder="Cook time"></input>
+          <br></br><input name="food_category" value={this.state.food_category} onChange={this.handleChange} placeholder="Food category"></input>
+          {/* <IngredientsForm /> */}
+          <br></br><button onClick={this.handleSubmit}>Add Recipe</button>
       </div>
     )
   }
 }
 
-export default RecipesForm
+export default connect()(RecipesForm)
