@@ -1,4 +1,5 @@
 import React from 'react'
+import Home from './Home'
 
 const recipes =
   [
@@ -14,6 +15,9 @@ const App = () => {
     <>
       <h1>Tea Time Recipes</h1>
         <ul>{recipes.map(recipes => <li key={recipes.id}> {recipes.name}</li>)}</ul>
+        <div>
+          <Home />
+        </div>
       </>
   )
 }
