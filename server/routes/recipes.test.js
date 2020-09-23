@@ -1,0 +1,32 @@
+  
+import request from 'supertest'
+
+import server from '../server'
+import {getRecipes} from '../db'
+
+jest.mock('../db', () => ({
+    getRecipes: jest.fn(),
+}))
+
+describe("GET /api/recipes", () => {
+    test("returns recipies when successful", () => {
+        getRecipes.mockImplementation(() => Promise.resolve([
+            {id: 1, recipe_name: 'Beef Kababs'}
+        ]))
+        return request(server)
+            .get('/api/recipes')
+            .then(res => {
+                expect(res.status).toBe(200)
+                expect(res.body.length).toBe(1)
+            })
+    })
+    test("returns 500 if database fuction blows up", () => {
+        getRecipes.mockImplementation(() => Promise.reject('error'))
+        return request(server)
+            .get('/api/recipes')
+            .then(res => {
+                expect(res.status).toBe(500)
+                expect(res.text).toMatch(/something went wrong/)
+            })
+    })
+})
