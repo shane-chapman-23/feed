@@ -1,0 +1,28 @@
+.center_text {
+  text-align: center;
+}
+
+.left_text {
+  text-align: left;
+}
+
+.big_text {
+  font-size: 230px;
+}
+
+.dish_name {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.cards {
+  border: black solid 2px;
+  padding: 1.5%;
+  border-radius: 20%;
+  display: inline-block;
+}
+
+.card_margins{
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
