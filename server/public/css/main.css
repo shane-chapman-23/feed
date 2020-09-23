@@ -1,0 +1,12 @@
+.centerText {
+  text-align: center;
+}
+
+.bigText {
+  font-size: 230px;
+}
+
+.cards {
+  border: black solid 2px;
+  display: inline-block;
+}
