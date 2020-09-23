@@ -8,14 +8,6 @@ cuisine not sure
 prep_time time
 cook_time time
 
-## Food Category(table)
-food_category_id int primary_key auto_increment
-food_category_name varchar
-
-## Course(table)
-course_id int primary_key auto_increment
-course_name varchar
-other course properties maybe, such as time of day?
 
 ## Ingredients(table)
 ingredient_id int primary_key auto_increment

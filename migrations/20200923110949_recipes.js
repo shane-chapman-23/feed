@@ -7,7 +7,7 @@ exports.up = (knex, Promise) => {
     table.string('prep_time')
     table.string('cook_time')
     table.integer('rating')
-    table.foreign('food_category').references('food_category.food_category_id')
+    table.string('food_category')
     })
 };
 
