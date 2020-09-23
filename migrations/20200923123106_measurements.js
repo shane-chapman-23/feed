@@ -7,4 +7,4 @@ exports.up = (knex, Promise) => {
 
 exports.down = (knex, Promise) => {
     return knex.schema.dropTable('measurements')
-};
+};        // .select('ingredient_id', 'ingredient_quantity', 'measurement_id')

@@ -4,10 +4,7 @@ module.exports = {
 
   development: {
     client: 'sqlite3',
-<<<<<<< HEAD
-=======
     useNullAsDefault: true,
->>>>>>> 0a35cddb59d91fd52051fd2fca466fc117dd8845
     connection: {
       filename: './dev.sqlite3'
     }
@@ -17,7 +14,7 @@ module.exports = {
     client: 'postgresql',
     connection: {
       database: 'my_db',
-      user:     'username',
+      user: 'username',
       password: 'password'
     },
     pool: {
@@ -33,7 +30,7 @@ module.exports = {
     client: 'postgresql',
     connection: {
       database: 'my_db',
-      user:     'username',
+      user: 'username',
       password: 'password'
     },
     pool: {
@@ -43,6 +40,14 @@ module.exports = {
     migrations: {
       tableName: 'knex_migrations'
     }
+  },
+
+  test: {
+    client: 'sqlite3',
+    connection: {
+      filename: ':memory:'
+    },
+    useNullAsDefault: true
   }
 
 };

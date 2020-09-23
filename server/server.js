@@ -3,7 +3,7 @@ const express = require('express')
 
 const server = express()
 
-const recipiesRoutes = require('./routes/recipies')
+const recipiesRoutes = require('./routes/recipes')
 
 server.use(express.json())
 server.use(express.static(path.join(__dirname, './public')))
