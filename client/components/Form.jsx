@@ -14,21 +14,21 @@ class Form extends React.Component {
     measurements: []
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
     this.setState({
-      recipe_name: event.target.value,
-      recipe_description: event.target.value,
-      image: event.target.value,
-      prep_time: event.target.value,
-      cook_time: event.target.value,
-      food_category: event.target.value,
-      ingredients: event.target.value,
-      quantity: event.target.value,
-      measurements: event.target.value
+      recipe_name: event.target.recipe_name,
+      recipe_description: event.target.recipe_description,
+      image: event.target.image,
+      prep_time: event.target.prep_time,
+      cook_time: event.target.cook_time,
+      food_category: event.target.food_category,
+      ingredients: event.target.ingredients,
+      quantity: event.target.quantity,
+      measurements: event.target.measurements
     })
   }
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault()
     alert('Submitted: ' + this.state);
   }
@@ -37,16 +37,16 @@ class Form extends React.Component {
     return(
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" value={this.state.recipe_name} onChange={this.handleChange} placeholder="recipe Name"></input>
-          <input type="text" value={this.state.recipe_description} onChange={this.handleChange} placeholder="recipe description"></input>
-          <input type="text" value={this.state.image} onChange={this.handleChange} placeholder="image url"></input>
-          <input type="text" value={this.state.prep_time} onChange={this.handleChange} placeholder="prep time"></input>
-          <input type="text" value={this.state.cook_time} onChange={this.handleChange} placeholder="cook time"></input>
-          <input type="text" value={this.state.food_category} onChange={this.handleChange} placeholder="food category"></input>
-          <input type="text" value={this.state.ingredients} onChange={this.handleChange} placeholder="ingredients"></input>
-          <input type="text" value={this.state.quantity} onChange={this.handleChange} placeholder="quantity"></input>
-          <input type="text" value={this.state.measurements} onChange={this.handleChange} placeholder="measurements"></input>
-          <input type="submit" value="submit" />
+          <input type="text" value={this.state.recipe_name} onChange={this.handleChange} placeholder="Recipe name"></input>
+          <br></br><input type="text" value={this.state.recipe_description} onChange={this.handleChange} placeholder="Recipe description"></input>
+          <br></br><input type="text" value={this.state.image} onChange={this.handleChange} placeholder="Image url"></input>
+          <br></br><input type="text" value={this.state.prep_time} onChange={this.handleChange} placeholder="Prep time"></input>
+          <br></br><input type="text" value={this.state.cook_time} onChange={this.handleChange} placeholder="Cook time"></input>
+          <br></br><input type="text" value={this.state.food_category} onChange={this.handleChange} placeholder="Food category"></input>
+          <br></br><input type="text" value={this.state.ingredients} onChange={this.handleChange} placeholder="Ingredients"></input>
+          <br></br><input type="text" value={this.state.quantity} onChange={this.handleChange} placeholder="Quantity"></input>
+          <br></br><input type="text" value={this.state.measurements} onChange={this.handleChange} placeholder="Measurements"></input>
+          <br></br><input type="submit" value="submit" />
         </form>
       </div>
     )
