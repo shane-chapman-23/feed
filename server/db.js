@@ -35,9 +35,3 @@ function getSteps(id, db = database) {
         })
 }
 
-// function getAll(id, db = database) {\
-//     return
-//     getRecipes()
-//     getIngredients()
-//     getSteps()
-// }
