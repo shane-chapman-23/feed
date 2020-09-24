@@ -25,7 +25,7 @@ class RecipeList extends React.Component {
             <ul>
                 {this.props.recipes.map(callback => <li key={callback.id}><RecipeListItem callback={callback} /></li>)}
             </ul>
-{this.props.recipes[0]?.recipe_name}
+            {this.props.recipes[0]?.recipe_name}
       </>
     )
   }

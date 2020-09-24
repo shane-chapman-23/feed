@@ -15,10 +15,19 @@ router.get('/api/recipes', (req, res) => {
 
 
 //Get ingredients and display on page
-router.get('/api/recipes/:id', (req, res) => {
+router.get('/api/ingredients/:id', (req, res) => {
 const id = req.params.id
   db.getIngredients(id)
     .then(callback => {
       res.json({ingredients: callback})
+    })
+})
+
+//get recipe steps
+router.get('/api/steps/:id', (req, res) => {
+  const id = req.params.id
+  db.getSteps(id)
+    .then(callback => {
+      res.json({steps: callback})
     })
 })
