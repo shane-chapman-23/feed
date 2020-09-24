@@ -34,7 +34,7 @@ exports.seed = (knex, Promise) => {
     },
     { 
       id: 9,
-      ingredient_name: 'Soy Sause',
+      ingredient_name: 'Soy Sauce',
     },
     { 
       id: 10,
@@ -68,5 +68,41 @@ exports.seed = (knex, Promise) => {
       id: 17,
       ingredient_name: 'Crispy Shallots',
     },
+    {
+      id: 18,
+      ingredient_name: 'Makrut Leaves'
+    },
+    {
+      id: 19,
+      ingredient_name: 'Jasmine Rice'
+    },
+    {
+      id: 20,
+      ingredient_name: 'Red Onion'
+    },
+    {
+      id: 21,
+      ingredient_name: 'Capsicum'
+    },
+    {
+      id: 22,
+      ingredient_name: 'Carrot'
+    },
+    {
+      id: 23,
+      ingredient_name: 'Beef Strips'
+    },
+    {
+      id: 24,
+      ingredient_name: 'Thai Red Curry Paste'
+    },
+    {
+      id: 25,
+      ingredient_name: 'Brown Sugar'
+    },
+    {
+      id: 26,
+      ingredient_name: 'Roasted Peanuts'
+    }
   ])
 }

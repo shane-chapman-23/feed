@@ -88,8 +88,8 @@ exports.seed = (knex, Promise) => {
       id: 13,
       recipe_id: 1, //Caramelised Pork & Garlic Rice
       ingredient_id: 13, //
-      ingredient_quantity: 1,
-      measurement_id: 9, //bag
+      ingredient_quantity: 30,
+      measurement_id: 3, //bag
     },
     { 
       id: 14,
@@ -119,5 +119,133 @@ exports.seed = (knex, Promise) => {
       ingredient_quantity: 1,
       measurement_id: 4, //packet
     },
+    { 
+      id: 18,
+      recipe_id: 2, 
+      ingredient_id: 2, 
+      ingredient_quantity: 2,
+      measurement_id: 2, 
+    },
+    { 
+      id: 19,
+      recipe_id: 2, 
+      ingredient_id: 18,
+      ingredient_quantity: 2,
+      measurement_id: 11, 
+    },
+    { 
+      id: 20,
+      recipe_id: 2, 
+      ingredient_id: 2,
+      ingredient_quantity: 40,
+      measurement_id: 3, 
+    },
+    { 
+      id: 21,
+      recipe_id: 2, 
+      ingredient_id: 19,
+      ingredient_quantity: 1,
+      measurement_id: 5, 
+    },
+    { 
+      id: 22,
+      recipe_id: 2, 
+      ingredient_id: 5,
+      ingredient_quantity: 1.25,
+      measurement_id: 5, 
+    },
+    { 
+      id: 23,
+      recipe_id: 2, 
+      ingredient_id: 6,
+      ingredient_quantity: 0.25,
+      measurement_id: 6, 
+    },
+    { 
+      id: 24,
+      recipe_id: 2, 
+      ingredient_id: 20,
+      ingredient_quantity: 1,
+      measurement_id: 10, 
+    },
+    { 
+      id: 25,
+      recipe_id: 2, 
+      ingredient_id: 21,
+      ingredient_quantity: 1,
+      measurement_id: 10, 
+    },
+    { 
+      id: 26,
+      recipe_id: 2, 
+      ingredient_id: 22,
+      ingredient_quantity: 1,
+      measurement_id: 10, 
+    },
+    { 
+      id: 27,
+      recipe_id: 2, 
+      ingredient_id: 15,
+      ingredient_quantity: 0.5,
+      measurement_id: 10, 
+    },
+    { 
+      id: 28,
+      recipe_id: 2, 
+      ingredient_id: 23,
+      ingredient_quantity: 500,
+      measurement_id: 3, 
+    },
+    { 
+      id: 29,
+      recipe_id: 2, 
+      ingredient_id: 13,
+      ingredient_quantity: 30,
+      measurement_id: 3, 
+    },
+    { 
+      id: 30,
+      recipe_id: 2, 
+      ingredient_id: 24,
+      ingredient_quantity: 1,
+      measurement_id: 4, 
+    },
+    { 
+      id: 31,
+      recipe_id: 2, 
+      ingredient_id: 9,
+      ingredient_quantity: 1,
+      measurement_id: 12, 
+    },
+    { 
+      id: 32,
+      recipe_id: 2, 
+      ingredient_id: 9,
+      ingredient_quantity: 1,
+      measurement_id: 12, 
+    },
+    { 
+      id: 33,
+      recipe_id: 2, 
+      ingredient_id: 25,
+      ingredient_quantity: 1,
+      measurement_id: 6, 
+    },
+    { 
+      id: 34,
+      recipe_id: 2, 
+      ingredient_id: 5,
+      ingredient_quantity: 2,
+      measurement_id: 12, 
+    },
+    { 
+      id: 35,
+      recipe_id: 2, 
+      ingredient_id: 25,
+      ingredient_quantity: 30,
+      measurement_id: 3, 
+    },
+
+
   ])
 }
