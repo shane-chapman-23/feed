@@ -21,9 +21,7 @@ class RecipeList extends React.Component {
     console.log(this.props.recipes[0]?.recipe_name)
     return(
       <div className="recipe_list">
-
           {this.props.recipes.map(recipe => <div key={recipe.id}><RecipeListItem recipe={recipe}/></div>)}
-
       </div>
     )
   }

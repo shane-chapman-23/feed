@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 function recipeItem ({recipe, dispatch}){
     return (
     <div className="card">
+        <img src={recipe.image}></img>
         <h1 className="recipe_name">{recipe.recipe_name}</h1>
         <ul className="card_items">
         <li><b>Prep Time:</b> {recipe.prep_time}</li>
