@@ -20,11 +20,9 @@ class RecipeList extends React.Component {
     // optional chaining operator (if true then keep going)
     console.log(this.props.recipes[0]?.recipe_name)
     return(
-      <>
-        <ul>
-          {this.props.recipes.map(recipe => <li key={recipe.id}><RecipeListItem recipe={recipe}/></li>)}
-        </ul>
-      </>
+      <div className="recipe_list">
+          {this.props.recipes.map(recipe => <div key={recipe.id}><RecipeListItem recipe={recipe}/></div>)}
+      </div>
     )
   }
 }
