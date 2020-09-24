@@ -18,7 +18,7 @@ class RecipeList extends React.Component {
 
   render() {
     // optional chaining operator (if true then keep going)
-    console.log(this.props.recipes[0]?.recipe_name)
+    //console.log(this.props.recipes[0]?.recipe_name)
     return(
       <div className="recipe_list">
           {this.props.recipes.map(recipe => <div className="card" key={recipe.id}><RecipeListItem recipe={recipe}/></div>)}

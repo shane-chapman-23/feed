@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {addToFavourites} from '../actions'
 
 function recipeItem ({recipe, dispatch}){
     return (
@@ -14,6 +15,7 @@ function recipeItem ({recipe, dispatch}){
         <p className="rating">{recipe.rating}</p>
         <p className="food_category">{recipe.food_category}</p>
         <button className="add">+</button>
+        <button className="favourite-link" onClick={() => dispatch(addToFavourites(recipe.id, recipe.recipe_name), alert('added to favourites'))}>Add to Favourites</button>
     </>
     )
 }
