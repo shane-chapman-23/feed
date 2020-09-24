@@ -19,13 +19,11 @@ class RecipeList extends React.Component {
   render() {
     // optional chaining operator (if true then keep going)
     console.log(this.props.recipes[0]?.recipe_name)
-    console.log(this.props.recipes)
     return(
       <>
-            <ul>
-                {this.props.recipes.map(callback => <li key={callback.id}><RecipeListItem callback={callback} /></li>)}
-            </ul>
-            {this.props.recipes[0]?.recipe_name}
+        <ul>
+          {this.props.recipes.map(recipe => <li key={recipe.id}><RecipeListItem recipe={recipe}/></li>)}
+        </ul>
       </>
     )
   }
@@ -38,3 +36,4 @@ function mapStateToProps (state) {
 }
 
 export default connect(mapStateToProps)(RecipeList)
+       
