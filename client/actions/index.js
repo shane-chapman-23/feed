@@ -3,10 +3,10 @@ export const FETCH_INGREDIENTS = 'FETCH_INGREDIENTS'
 export const FETCH_STEPS = 'FETCH_STEPS'
 
 
-export function fetchRecipes (recipe){
+export function fetchRecipes (recipes){
     return {
         type: FETCH_RECIPES,
-        recipe
+        recipes
     }
 }
 
