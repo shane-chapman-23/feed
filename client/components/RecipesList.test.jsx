@@ -1,7 +1,7 @@
 import React from 'react'
 import {render, screen} from '@testing-library/react'
 
-import Recipes from './Recipes'
+import RecipesList from './RecipesList'
 
 let tempRecipes = [
   {id: 1, name: 'Curry', URL: "Insert Url", info: 'Truly exquisite'},
@@ -9,7 +9,7 @@ let tempRecipes = [
 ]
 
 test('displays tempRecipes', () => {
-  render(<Recipes />)
+  render(<RecipesList />)
   expect(tempRecipes.length).toBe(2)
   expect(tempRecipes[0].name).toMatch(/Curry/)
 })

@@ -33,7 +33,6 @@
       "@babel/plugin-proposal-class-properties",
       "@babel/plugin-proposal-object-rest-spread"
     ]
-  
   },
   "jest": {},
   "dependencies": {
@@ -62,6 +61,7 @@
     "redux": "^4.0.5",
     "regenerator-runtime": "^0.13.7",
     "sqlite3": "^5.0.0",
+    "supertest": "^4.0.2",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0"

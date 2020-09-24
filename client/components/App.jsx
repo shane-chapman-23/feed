@@ -1,5 +1,5 @@
 import React from 'react'
-// import Home from './Home'
+import Home from './Home'
 import RecipesForm from './RecipesForm'
 // import { AddIngredient } from '/'
 
@@ -18,8 +18,8 @@ const App = () => {
       {/* <h1>Tea Time Recipes</h1>
         <ul>{recipes.map(recipes => <li key={recipes.id}> {recipes.name}</li>)}</ul> */}
         <div>
-          {/* <Home /> */}
-          <RecipesForm />
+          <Home />
+          {/* <RecipesForm /> */}
         </div>
       </>
   )
