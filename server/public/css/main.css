@@ -1,3 +1,54 @@
+body {
+  background-color: bisque;
+  width: 100%;
+  margin: auto;
+}
+
+header {
+  background-color: orange;
+  height: auto;
+  width: 100%;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.logoImg img{
+  height: 125px;
+  width: 125px;
+  margin-left: 25px;
+  filter: invert(20%);
+}
+
+.logoImg img:hover{
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.logo {
+font-family: 'Dosis';
+font-size: 6em;
+color: white;
+font-weight: 600;
+margin: auto;
+margin-bottom: -30px;
+}
+
+.logoTag {
+font-family: 'Dosis';
+font-size: 2em;
+color: white;
+font-weight: 600;
+padding: 25px;
+padding-top: 0;
+margin: auto;
+}
+
+footer {
+  background-color: orange;
+  height: 5%;
+  width: 100%;
+}
+
 .center_text {
   text-align: center;
 }
@@ -10,19 +61,47 @@
   font-size: 230px;
 }
 
-.dish_name {
+ul {
+  list-style-type: none;
+}
+
+.recipe_list{
+margin: 50px;
+display: inline-flex;
+float: left;
+}
+
+.card {
+  background-color: floralwhite;
+  border:  darkgrey solid 2px;
+  padding: 1.5%;
+  margin: 20px;
+  border-radius: 15px;
+  display: inline-block;
+  width: 300px;
+  height: 500px;
+}
+
+.card:hover {
+  border: orange solid 2px;
+  cursor: pointer;
+}
+
+.recipe_name {
+  font-size: large;
   font-weight: bold;
   text-decoration: underline;
 }
 
-.cards {
-  border: black solid 2px;
-  padding: 1.5%;
-  border-radius: 20%;
+ul li:before {
+  content: '';
   display: inline-block;
+  height: 15px;
+  width: 15px;
+  background-size: 15px;
+  background-image: url('../img/knifeFork.png');
+  background-repeat: no-repeat;
+  margin-right: 5px;
 }
 
-.card_margins{
-  margin-top: 0%;
-  margin-bottom: 0%;
-}
+
