@@ -14,8 +14,13 @@ header {
   background-color: orange;
   height: auto;
   width: 100%;
-  margin-bottom: 10px;
   text-align: center;
+}
+
+nav {
+  width: 100%;
+  background-color: floralwhite;
+  padding-top: 10px
 }
 
 .logoImg img{
@@ -59,18 +64,6 @@ footer {
   text-align: center;
   padding-top: 20px;
   padding-bottom: 10px;
-}
-
-.center_text {
-  text-align: center;
-}
-
-.left_text {
-  text-align: left;
-}
-
-.big_text {
-  font-size: 230px;
 }
 
 ul {
