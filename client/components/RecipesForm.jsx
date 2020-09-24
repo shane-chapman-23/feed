@@ -1,10 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-// import IngredientsForm from './IngredientsForm'
-
 class RecipesForm extends React.Component {
-  
+
   state = {
     recipe_name: "",
     recipe_description: "",

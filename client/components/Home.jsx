@@ -1,6 +1,6 @@
 import React from 'react'
 
-import RecipesList from './RecipesList'
+import RecipesList from './RecipeList'
 
 const Home = () => {
   return (

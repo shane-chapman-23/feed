@@ -7,7 +7,7 @@ module.exports = router
 //Get recipes and display on main page
 router.get('/api/recipes', (req, res) => {
   db.getRecipes()
-    .then(callback => res.json(callback))
+    .then(callback => res.json({recipes: callback}))
     .catch(err => {
         res.status(500).send('something went wrong')
   })

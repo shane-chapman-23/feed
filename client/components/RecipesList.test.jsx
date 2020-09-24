@@ -1,7 +1,9 @@
 import React from 'react'
+import { Provider } from 'react-redux'
 import {render, screen} from '@testing-library/react'
+import store from '../store'
 
-import RecipesList from './RecipesList'
+import RecipesList from './RecipeList'
 
 let tempRecipes = [
   {id: 1, name: 'Curry', URL: "Insert Url", info: 'Truly exquisite'},
@@ -9,7 +11,7 @@ let tempRecipes = [
 ]
 
 test('displays tempRecipes', () => {
-  render(<RecipesList />)
+  render(<Provider store={store}><RecipesList /></Provider>)
   expect(tempRecipes.length).toBe(2)
   expect(tempRecipes[0].name).toMatch(/Curry/)
 })
