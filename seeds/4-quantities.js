@@ -312,14 +312,14 @@ exports.seed = (knex, Promise) => {
       id: 45,
       recipe_id: 3, 
       ingredient_id: 31,
-      ingredient_quantity: '',
+      ingredient_quantity: 0,
       measurement_id: 10, 
     },
     { 
       id: 46,
       recipe_id: 3, 
       ingredient_id: 31,
-      ingredient_quantity: '',
+      ingredient_quantity: 0,
       measurement_id: 10, 
     },
     { 
