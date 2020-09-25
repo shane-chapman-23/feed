@@ -1,29 +1,13 @@
 import React from 'react'
 
-import beerData from '../data/beers'
-
 const FavouriteItem = (props) => {
-  const name = getNameFromId(props.item.id)
+
   return (
     <tr>
-      <td>{name}</td>
-      <td>
-        <input
-          className='update-input'
-          value={props.item.quantity}
-          onChange={(e) => props.update(props.item.id, e.target.value)} />
-      </td>
-      <td><button onClick={() => props.deleteFromFavourites(props.item.id)}>
-        <span className='fa fa-trash fa-2x' />
-      </button></td>
+      <td><h4>{props.item.recipe_name}</h4></td>
+      <td><button onClick={() => props.deleteFromFavourites(props.item.id)}>Delete</button></td>
     </tr>
   )
 }
-
-function getNameFromId (id) {
-  const beer = beerData.beers.find(beer => beer.id === id)
-  return beer.name
-}
-
 
 export default FavouriteItem

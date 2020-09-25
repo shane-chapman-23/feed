@@ -1,9 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import FavouriteListItem from './FavouriteListItem'
+import FavouriteListItem from './favouriteListItem'
 
-import {deleteFromFavourites, updateFavourites} from '../actions'
+import {deleteFromFavourites} from '../actions'
 
 /*
  * This is a stateful component to manage the state of the quantities
@@ -16,22 +16,13 @@ class MyFavourites extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      favourite: props.favourite
+      favourites: props.favourites
     }
   }
 
-  update = (id, quantity) => {
-    this.setState({
-      favourite: this.state.favourite.map(item => {
-        if (item.id === id) item.quantity = Number(quantity)
-        return item
-      })
-    })
-  }
-
   deleteItem = (id) => {
-    const favourite = this.state.favourite.filter(item => item.id !== id)
-    this.setState({ favourite })
+    const favourites = this.state.favourites.filter(item => item.id !== id)
+    this.setState({ favourites })
     this.props.deleteFromFavourites(id)
   }
 
@@ -41,27 +32,19 @@ class MyFavourites extends React.Component {
         <table>
           <thead>
             <tr>
-              <td>Recipe</td>
-              <td>Quantity</td>
-              <td>Remove</td>
+              <td><h4>Recipes</h4></td>
             </tr>
           </thead>
           <tbody>
-            {this.props.favourite.map((item, id) => {
+            {this.props.favourites.map((item, id) => {
               return (
-                <FavouriteListItem key={id}
-                  item={item}
-                  update={this.update}
-                  deleteFromFavourites={this.deleteFromFavourites}
-                />
+                <FavouriteListItem key={id} item={item} deleteFromFavourites={this.deleteItem}/>
               )
           })}
           </tbody>
         </table>
         <p className='actions'>
-          <a href='#' onClick={this.props.keepShopping}>Look at more Recipes</a>
-          <button onClick={() => this.props.updateFavourites(this.state.favourite)}>Update</button>
-          <button className='button-primary'>Add to Shopping List</button>
+          <button onClick={this.props.viewRecipes}>View more Recipes</button>
         </p>
       </div>
     )
@@ -70,15 +53,14 @@ class MyFavourites extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    favourite: state.favourite
+    favourites: state.favourites
   }
 }
 
 const mapDispatchToProps =(dispatch) => {
   return {
-    keepShopping: () => dispatch(changePage('recipes')),
     deleteFromFavourites: (id) => dispatch(deleteFromFavourites(id)),
-    updateFavourites: (favourite) => dispatch(updateFavourites(favourite))
+    viewRecipes: () => dispatch({ type: 'CHANGE_PAGE', page: 'recipes' }),
   }
 }
 
