@@ -9,6 +9,7 @@ router.get('/api/recipes', (req, res) => {
   db.getRecipes()
     .then(callback => res.json({recipes: callback}))
     .catch(err => {
+      console.log(err)
         res.status(500).send('something went wrong')
   })
 })
