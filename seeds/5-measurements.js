@@ -47,6 +47,14 @@ exports.seed = (knex, Promise) => {
     { 
       id: 12,
       measurement_name: 'tbs',
+    },
+    { 
+      id: 13,
+      measurement_name: 'head',
+    },
+    { 
+      id: 14,
+      measurement_name: 'pinch',
     }
   ])
 }

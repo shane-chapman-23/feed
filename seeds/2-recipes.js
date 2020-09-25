@@ -17,6 +17,15 @@ exports.seed = (knex, Promise) => {
       cook_time: '35-45 mins',
       rating: 5,
       food_category: ''
+    },
+    { id: 3,
+      recipe_name: 'Korean Beef Tacos',
+      recipe_description: "Mexican Korean Fusion? Yeah, that's right, tonight we're getting trendy on you. Don't worry though, after you've tried our easy pickle on this colourful taco, you'll be glad we did",
+      image: 'img/food/korean_beef_tacos.png',
+      prep_time: '20 mins',
+      cook_time: '30 mins',
+      rating: 5,
+      food_category: ''
     }
   ])
 }
