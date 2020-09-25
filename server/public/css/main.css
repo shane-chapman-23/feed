@@ -220,7 +220,7 @@ z-index: 1;
 
 /* Handle on hover */ 
 ::-webkit-scrollbar-thumb:hover { 
-    background: gold;
+    background: black;
 } 
 
 /* Small devices*/
