@@ -71,7 +71,7 @@ ul {
 }
 
 main{
-  height: 100vh;
+  height: 100%;
   margin-left: 5%;
   margin-right: 5%;
 }
@@ -137,3 +137,37 @@ button:hover{
   color: black;
   margin-left: 10px;
 }
+
+.checkedStar {
+  color: gold;
+}
+
+/* Small devices*/
+@media only screen and (min-width: 320px) {
+    .recipe_list{
+    grid-template-columns: 100%;
+  }
+}
+
+/* Medium devices*/
+@media only screen and (min-width: 768px) {
+  .recipe_list{
+    grid-template-columns: 50% 50%;
+  }
+} 
+
+/* Large devices*/
+@media only screen and (min-width: 1200px) {
+  .recipe_list{
+    grid-template-columns: 33% 33% 33%;
+  }
+}
+/* Wide Screen devices*/
+@media only screen and (min-width: 1900px) {
+  .recipe_list{
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+}
+
+
+

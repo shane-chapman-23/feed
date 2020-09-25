@@ -39,7 +39,14 @@ class recipeItem extends React.Component {
                 <li><b>Cook Time:</b> {recipe.cook_time}</li>
                 <li><b>Description:</b> {recipe.recipe_description}</li>
                 </ul>
-                <p className="rating">{recipe.rating}</p>
+                <p className="rating">
+                    <span class="fa fa-star checkedStar"></span>
+                    <span class="fa fa-star checkedStar"></span>
+                    <span class="fa fa-star checkedStar"></span>
+                    <span class="fa fa-star checkedStar"></span>
+                    <span class="fa fa-star checkedStar"></span>
+                ({recipe.rating})
+                </p>
                 <p className="food_category">{recipe.food_category}</p>
                 <button className="add" onClick={this.clickHandler}>+</button>
                 
