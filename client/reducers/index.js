@@ -11,5 +11,5 @@ export default combineReducers({
     recipes: recipesReducer,
     ingredients: ingredientsReducer,
     steps: stepsReducer,
-    favourite: favouriteReducer
+    favourites: favouriteReducer
 })
