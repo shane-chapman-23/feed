@@ -6,8 +6,7 @@ exports.up = (knex, Promise) => {
     table.integer('ingredient_id')
     table.foreign('ingredient_id').references('ingredients.id')
     table.integer('ingredient_quantity')
-    table.integer('measurement_id')
-    table.foreign('measurement_id').references('measurement.id')
+    table.integer('measurement_id').references('measurements.id')
     })
 };
 
