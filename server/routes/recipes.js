@@ -13,7 +13,6 @@ router.get('/api/recipes', (req, res) => {
   })
 })
 
-
 //Get ingredients and display on page
 router.get('/api/ingredients/:id', (req, res) => {
 const id = req.params.id

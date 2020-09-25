@@ -1,12 +1,11 @@
 import {combineReducers} from 'redux'
 
 import recipesReducer from './recipes'
-import ingredientsReducer from './recipes'
-import stepsReducer from './recipes'
+import ingredientsReducer from './ingredients'
+import stepsReducer from './steps'
 
 export default combineReducers({
     recipes: recipesReducer,
-    recipesReducer,
-    ingredientsReducer,
-    stepsReducer
+    ingredients: ingredientsReducer,
+    steps: stepsReducer
 })
