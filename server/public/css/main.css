@@ -126,4 +126,14 @@ ul li:before {
   margin-right: 5px;
 }
 
+button{
+  background-color: black;
+  color: orange;
+  margin-left: 10px;
+}
 
+button:hover{
+  background-color: white;
+  color: black;
+  margin-left: 10px;
+}

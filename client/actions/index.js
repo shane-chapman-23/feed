@@ -4,7 +4,6 @@ export const FETCH_STEPS = 'FETCH_STEPS'
 
 export const ADD_TO_FAVOURITES = 'ADD_TO_FAVOURITES'
 export const DELETE_FROM_FAVOURITES = 'DELETE_FROM_FAVOURITES'
-export const UPDATE_FAVOURITES = 'UPDATE_FAVOURITES'
 
 export const CHANGE_PAGE = 'CHANGE_PAGE'
 
@@ -37,10 +36,10 @@ export function fetchSteps (steps){
 }
 
 //FAVOURITES
-export const addToFavourites = (id) => {
+export const addToFavourites = (recipe) => {
   return {
     type: ADD_TO_FAVOURITES,
-    id
+    recipe
   }
 }
 
@@ -48,12 +47,5 @@ export const deleteFromFavourites = (id) => {
   return {
     type: DELETE_FROM_FAVOURITES,
     id
-  }
-}
-
-export const updateFavourites = (cart) => {
-  return {
-    type: UPDATE_FAVOURITES,
-    cart
   }
 }
