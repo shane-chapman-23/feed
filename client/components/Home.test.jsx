@@ -3,7 +3,7 @@ import {render, screen} from '@testing-library/react'
 
 import Home from './Home'
 
-jest.mock('./RecipesList.jsx', () => { return () => <h1>Recipes</h1> })
+jest.mock('./RecipeList.jsx', () => { return () => <h1>Recipes</h1> })
 
 test('renders heading in Home', () => {
   render(<Home />)

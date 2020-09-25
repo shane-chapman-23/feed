@@ -19,7 +19,7 @@ function getIngredients(id, db = database) {
             .join('ingredients', 'ingredients.id', 'quantities.ingredient_id' )
             .join('measurements', 'measurements.id', 'quantities.measurement_id')
             .where('recipes.id', id)
-            .select('ingredient_name', 'ingredient_quantity', 'measurement_name')
+            .select('recipe_id', 'ingredient_name', 'ingredient_quantity', 'measurement_name')
             .then((result) => {
                 return result
             })   
@@ -29,7 +29,7 @@ function getSteps(id, db = database) {
     return db('steps')
         .join('recipes', 'recipes.id', 'steps.recipe_id')
         .where('recipes.id', id)
-        .select('step_number', 'step_desc')
+        .select('recipe_id', 'step_number', 'step_desc')
         .then((result) => {
             return result
         })
