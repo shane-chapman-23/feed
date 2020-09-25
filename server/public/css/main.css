@@ -138,44 +138,90 @@ ul li:before {
   margin-right: 5px;
 }
 
-button{
+button {
   background-color: black;
   color: orange;
-  margin-left: 10px;
 }
 
 button:hover{
-  background-color: white;
+  background-color: orange;
   color: black;
-  margin-left: 10px;
+}
+
+button:focus{
+  background-color: orange;
+  color: black; 
+}
+
+.show_more{
+  margin: auto;
+}
+
+.show_less{
+float: right;
+clear: right;
+}
+
+
+.favourite-link {
+float: right;
+clear: right;
 }
 
 .checkedStar {
   color: gold;
 }
 
-/* Modal Content */
 .recipe-content {
 display: absolute;
 position: fixed;
-top: 20%;
-left: 40%;
-right: 40%;
-margin-top: -10%; /* Negative half of height. */
-margin-left: -20%; /* Negative half of width. */
-margin-right: -20%; /* Negative half of width. */
+top: 10%;
+left: 25%;
+right: 25%;
 z-index:+1;
 overflow: auto;
 background-color: #fefefe;
 padding: 20px;
 border: 1px solid #888;
 width: 50%;
-height:80%
+height: 80%;
+border-radius: 15px;
+padding: 20px;
 }
 
-.show_less{
-float: right;
+.hide{
+display: absolute;
+position: fixed;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+background-color: black;
+opacity: 0.8;
+z-index: 1;
 }
+
+/* Designing for scroll-bar */ 
+::-webkit-scrollbar { 
+    width: 10px;
+} 
+
+/* Track */ 
+::-webkit-scrollbar-track { 
+    background: gainsboro; 
+    border-radius: 5px; 
+} 
+
+/* Handle */ 
+::-webkit-scrollbar-thumb { 
+    background: black; 
+    border-radius: 5px;
+} 
+
+/* Handle on hover */ 
+::-webkit-scrollbar-thumb:hover { 
+    background: gold;
+} 
 
 /* Small devices*/
 @media only screen and (min-width: 320px) {

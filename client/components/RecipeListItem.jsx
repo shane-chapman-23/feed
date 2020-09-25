@@ -52,14 +52,15 @@ class recipeItem extends React.Component {
                 <p className="food_category">{recipe.food_category}</p>
                 <button className="show_more" onClick={this.clickHandler}>Show more</button>
 
+                {this.state.showMore && <div className="hide"></div>}
                 {this.state.showMore &&
                     <div className="recipe-content">
                         <button className="show_less" onClick={this.clickHandler}>Show less</button>
+                        <button className="favourite-link" onClick={() => dispatch(addToFavourites(recipe), alert('added to favourites'))}>Add to Favourites</button>
                         <IngredientsList id={recipe.id} />
-                        <StepsList id={recipe.id} />
+                        <StepsList id={recipe.id} />                     
                     </div>}
 
-                <button className="favourite-link" onClick={() => dispatch(addToFavourites(recipe), alert('added to favourites'))}>Add to Favourites</button>
 
             </>
         )
