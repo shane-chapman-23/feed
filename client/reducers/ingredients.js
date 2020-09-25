@@ -5,7 +5,7 @@ const initialState = []
 export default function ingredientsReducer(state = initialState, action) {
     switch (action.type) {
         case FETCH_INGREDIENTS:
-            return action.ingredients
+            return [...state, action.ingredients]
         default:
             return state
     }

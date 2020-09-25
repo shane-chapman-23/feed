@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { fetchIngredients, fetchSteps } from '../actions'
+import { fetchIngredients, fetchSteps, addToFavourites} from '../actions'
 import { getIngredients, getSteps } from '../api'
 import IngredientsList from './IngredientsList'
 import StepsList from './StepsList'
@@ -9,7 +9,7 @@ class recipeItem extends React.Component {
     state = {
         showMore: false
     }
-
+    
     componentDidMount() {
         getIngredients(this.props.recipe.id)
         .then(ingredients => {
@@ -44,10 +44,10 @@ class recipeItem extends React.Component {
                 
                 {this.state.showMore && 
                 <div>
-                    <IngredientsList />
-                    <StepsList />
+                    <IngredientsList id={recipe.id}/>
+                    <StepsList id={recipe.id}/>
                 </div>}
-                
+                <button className="favourite-link" onClick={() => dispatch(addToFavourites(recipe.id, recipe.recipe_name), alert('added to favourites'))}>Add to Favourites</button>
             </>
         )
     }

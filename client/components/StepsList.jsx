@@ -1,22 +1,23 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import { fetchSteps } from '../actions'
+import { getSteps } from '../api'
+import { getRecipeSteps } from './helpers/helpers'
 
-function StepsList (props) {
-  const steps = props.steps
-
-  return(
-    <>
-      {/* map over steps for desired recipe */}
-      <div>
-        {steps.map(step => <ul><li key={step.step_number}>{step.step_number}. {step.step_desc}</li></ul>)}
-      </div>
-    </>
-  )
+class StepsList extends React.Component {
+    
+    render() {
+        return (
+            <div>
+                <ul>{getRecipeSteps(this.props.steps, this.props.id).map(step => <li key={step.step_number}>{step.step_number}. {step.step_desc}</li>)}</ul>
+            </div>
+        )
+    }
 }
 
 function mapStateToProps(globalState) {
   return {
-    steps: globalState.steps.steps
+    steps: globalState.steps
   }
 }
 
