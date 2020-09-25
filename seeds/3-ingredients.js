@@ -103,6 +103,30 @@ exports.seed = (knex, Promise) => {
     {
       id: 26,
       ingredient_name: 'Roasted Peanuts'
-    }
+    },
+    {
+      id: 27,
+      ingredient_name: 'White Wine Vinegar'
+    },
+    {
+      id: 28,
+      ingredient_name: 'Sugar'
+    },
+    {
+      id: 29,
+      ingredient_name: 'Cos Lettuce'
+    },
+    {
+      id: 30,
+      ingredient_name: 'Mini Tortillas'
+    },
+    {
+      id: 31,
+      ingredient_name: 'Garlic Aoli'
+    },
+    {
+      id: 32,
+      ingredient_name: 'Chilli Flakes'
+    },
   ])
 }
