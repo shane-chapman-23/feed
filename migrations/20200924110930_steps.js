@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
         table.integer('recipe_id')
         table.foreign('recipe_id').references('recipes.id')
         table.integer('step_number')
-        table.string('step_desc')
+        table.text('step_desc')
         })
 };
 
