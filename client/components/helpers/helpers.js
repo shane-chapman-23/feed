@@ -9,3 +9,7 @@ export function getRecipeSteps(steps, recipeId) {
         return item.steps[0].recipe_id === recipeId})
         return stepsFilter[0].steps
 }
+
+// export function getAllIngredients(ingredients) {
+//     return ingredients.ingredients.map(item => )
+// }

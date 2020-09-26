@@ -73,7 +73,6 @@ class MyFavourites extends React.Component {
 const mapStateToProps = (state) => {
   return {
     favourites: state.favourites,
-    ingredients: state.ingredients
   }
 }
 
@@ -81,7 +80,7 @@ const mapDispatchToProps =(dispatch) => {
   return {
     deleteFromFavourites: (id) => dispatch(deleteFromFavourites(id)),
     viewRecipes: () => dispatch({ type: 'CHANGE_PAGE', page: 'recipes' }),
-    dispatch
+    dispatch: action => action
   }
 }
 

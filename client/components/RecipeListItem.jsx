@@ -60,8 +60,6 @@ class recipeItem extends React.Component {
                         <IngredientsList id={recipe.id} />
                         <StepsList id={recipe.id} />                     
                     </div>}
-
-
             </>
         )
     }
