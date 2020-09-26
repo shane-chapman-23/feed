@@ -34,7 +34,7 @@ exports.seed = (knex, Promise) => {
       image: 'img/food/crispy_japanese_chicken.png',
       prep_time: '20 mins',
       cook_time: '30 mins',
-      rating: 3,
+      rating: 5,
       food_category: ''
     },
     { 
@@ -44,7 +44,17 @@ exports.seed = (knex, Promise) => {
       image: 'img/food/beef_stroganoff.png',
       prep_time: '20 mins',
       cook_time: '30 mins',
-      rating: 3,
+      rating: 5,
+      food_category: ''
+    },
+    { 
+      id: 6,
+      recipe_name: 'Herby Crumbed Fish',
+      recipe_description: "Tasty fish dish with a twist",
+      image: 'img/food/herby_crumbed_fish.png',
+      prep_time: '20 mins',
+      cook_time: '35 mins',
+      rating: 5,
       food_category: ''
     }
   ])

@@ -220,5 +220,48 @@ exports.seed = (knex, Promise) => {
       id: 55,
       ingredient_name: 'Frozen Peas',
     },
+    {
+      id: 56,
+      ingredient_name: 'Kumara',
+    },
+    {
+      id: 57,
+      ingredient_name: 'Tarakihi Fish Fillets',
+    },
+    {
+      id: 58,
+      ingredient_name: 'Panko Breadcrumbs',
+    },
+    {
+      id: 59,
+      ingredient_name: 'Lemon',
+    },
+    {
+      id: 60,
+      ingredient_name: 'Dried Chives',
+    },
+    {
+      id: 61,
+      ingredient_name: 'Dried Parsley',
+    },
+    {
+      id: 62,
+      ingredient_name: 'Mustard Powder',
+    },
+    {
+      id: 63,
+      ingredient_name: 'Wholegrain Mustard',
+    },{
+      id: 64,
+      ingredient_name: 'Brocolli',
+    },
+    {
+      id: 65,
+      ingredient_name: 'Lettuce',
+    },
+    {
+      id: 66,
+      ingredient_name: 'Vegetable Oil',
+    },
   ])
 }
