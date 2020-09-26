@@ -1,9 +1,9 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
 import FavouriteListItem from './favouriteListItem'
 
-import {deleteFromFavourites} from '../actions'
+import { deleteFromFavourites } from '../actions'
 
 /*
  * This is a stateful component to manage the state of the quantities

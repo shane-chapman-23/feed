@@ -70,63 +70,155 @@ exports.seed = (knex, Promise) => {
     },
     {
       id: 18,
-      ingredient_name: 'Makrut Leaves'
+      ingredient_name: 'Makrut Leaves',
     },
     {
       id: 19,
-      ingredient_name: 'Jasmine Rice'
+      ingredient_name: 'Jasmine Rice',
     },
     {
       id: 20,
-      ingredient_name: 'Red Onion'
+      ingredient_name: 'Red Onion',
     },
     {
       id: 21,
-      ingredient_name: 'Capsicum'
+      ingredient_name: 'Capsicum',
     },
     {
       id: 22,
-      ingredient_name: 'Carrot'
+      ingredient_name: 'Carrot',
     },
     {
       id: 23,
-      ingredient_name: 'Beef Strips'
+      ingredient_name: 'Beef Strips',
     },
     {
       id: 24,
-      ingredient_name: 'Thai Red Curry Paste'
+      ingredient_name: 'Thai Red Curry Paste',
     },
     {
       id: 25,
-      ingredient_name: 'Brown Sugar'
+      ingredient_name: 'Brown Sugar',
     },
     {
       id: 26,
-      ingredient_name: 'Roasted Peanuts'
+      ingredient_name: 'Roasted Peanuts',
     },
     {
       id: 27,
-      ingredient_name: 'White Wine Vinegar'
+      ingredient_name: 'White Wine Vinegar',
     },
     {
       id: 28,
-      ingredient_name: 'Sugar'
+      ingredient_name: 'Sugar',
     },
     {
       id: 29,
-      ingredient_name: 'Cos Lettuce'
+      ingredient_name: 'Cos Lettuce',
     },
     {
       id: 30,
-      ingredient_name: 'Mini Tortillas'
+      ingredient_name: 'Mini Tortillas',
     },
     {
       id: 31,
-      ingredient_name: 'Garlic Aoli'
+      ingredient_name: 'Garlic Aoli',
     },
     {
       id: 32,
-      ingredient_name: 'Chilli Flakes'
+      ingredient_name: 'Chilli Flakes',
+    },
+    {
+      id: 33,
+      ingredient_name: 'Cabbage',
+    },
+    {
+      id: 34,
+      ingredient_name: 'Sesame Seeds',
+    },
+    {
+      id: 35,
+      ingredient_name: 'Flour',
+    },
+    {
+      id: 36,
+      ingredient_name: 'Crispy Noodles',
+    },
+    {
+      id: 37,
+      ingredient_name: 'Mayonnaise',
+    },
+    {
+      id: 38,
+      ingredient_name: 'Courgette',
+    },
+    {
+      id: 39,
+      ingredient_name: 'OXO Cube - Chicken',
+    },
+    {
+      id: 40,
+      ingredient_name: 'OXO Cube - Beef',
+    },
+    {
+      id: 41,
+      ingredient_name: 'Chicken Thighs',
+    },
+    {
+      id: 42,
+      ingredient_name: 'Sesame Oil',
+    },
+    {
+      id: 43,
+      ingredient_name: 'Potatoes',
+    },
+    {
+      id: 44,
+      ingredient_name: 'Milk',
+    },
+    {
+      id: 45,
+      ingredient_name: 'Brown Onion',
+    },
+    {
+      id: 46,
+      ingredient_name: 'Mushrooms',
+    },
+    {
+      id: 47,
+      ingredient_name: 'Ground Paprika',
+    },
+    {
+      id: 48,
+      ingredient_name: 'Garlic Powder',
+    },
+    {
+      id: 49,
+      ingredient_name: 'Onion Powder',
+    },
+    {
+      id: 50,
+      ingredient_name: 'Dried Taragon',
+    },
+    {
+      id: 51,
+      ingredient_name: 'Mild Curry Powder',
+    },
+    {
+      id: 52,
+      ingredient_name: 'Cream',
+    },
+    {
+      id: 53,
+      ingredient_name: 'Dijon Mustard',
+    },
+    {
+      id: 54,
+      ingredient_name: 'Red Wine Vinegar',
+    },
+    {
+      id: 55,
+      ingredient_name: 'Frozen Peas',
     },
   ])
 }

@@ -23,6 +23,21 @@ exports.seed = function(knex) {
         {id: 16, recipe_id: 3, step_number: 4, step_desc: 'In a medium frying pan, heat a drizzle of olive oil over a high heat. When the oil is hot, add 1/2 the beef strips and cook, tossing, until browned and cooked through, 1-2 minutes. Transfer to a plate and repeat with the remaining strips.'},
         {id: 17, recipe_id: 3, step_number: 5, step_desc: 'While the beef is cooking, heat the mini flour tortillas in a sandwich press, or on a plate in the microwave for 10 second bursts, until warmed through.'},
         {id: 18, recipe_id: 3, step_number: 6, step_desc: 'Drain the liquid from the pickled onion. Take everything to the table to serve. Top the tortillas with the salad, Korean beef and quick pickled onions. Add a dollop of garlic aioli. Sprinkle with the crispy shallots and a pinch of chilli flakes.'},
+        {id: 19, recipe_id: 4, step_number: 1, step_desc: 'Combine rice, water and salt in a medium pot and bring to the boil. As soon as it boils, cover with a lid and reduce to the lowest heat to cook for 12 minutes. Turn off heat, keep lid on and leave to steam for a further 8 minutes - NO PEEKING!'},
+        {id: 20, recipe_id: 4, step_number: 2, step_desc: 'While rice cooks, thinly slice 2 cups worth of cabbage, then add sliced spring onions, grated carrot and courgette. Mix in a medium sized bowl and set aside.'},
+        {id: 21, recipe_id: 4, step_number: 3, step_desc: 'In a separate bowl, combine flour & chicken oxo cube. Pat chicken dry and dice into 3cm sized pieces. Add to flour mix and toss well to combine.'},
+        {id: 22, recipe_id: 4, step_number: 4, step_desc: 'Heat a little oil in a large fry-pan on medium-high heat. Shake off excess flour and cook chicken for 5-6 minutes, turn on all sides until cooked through and golden. Set aside on paper towels and season with salt.'},
+        {id: 23, recipe_id: 4, step_number: 5, step_desc: 'In a small bowl combine second measure of mayonnaise and sesame oil.'},
+        {id: 24, recipe_id: 4, step_number: 6, step_desc: 'Just before serving, add remaining slaw ingredients to the bowl, mix to combine and season to taste.'},
+        {id: 25, recipe_id: 4, step_number: 7, step_desc: 'To serve, spoon rice onto plates, top with chicken and serve slaw on the side with a dollop of sesame mayonnaise'},
+        {id: 26, recipe_id: 5, step_number: 1, step_desc: 'Peel and cut potatoes into 2cm cubes and put into a medium pot of salted water; then boil for 12-15 minutes, until very soft. Drain water and mash until smooth. Add milk, butter and season to taste. Mix together and set aside.'},
+        {id: 27, recipe_id: 5, step_number: 2, step_desc: 'While potatoes are cooking, finely dice onion, thinly slice carrot on an angle, cut mushrooms into slices and also set aside.'},
+        {id: 28, recipe_id: 5, step_number: 3, step_desc: 'Make a beef stock by dissolving the OXO cube in 3/4 cup of boiling water. Set aside.'},
+        {id: 29, recipe_id: 5, step_number: 4, step_desc: 'Heat a little oil in a large fry-pan on medium-high heat. When the oil is hot, add 1/2 the beef strips and cook, tossing, until brown and cooked through, 1-2 minutes. Transfer to a plate and cover. Repeat process with the remaining strips.'},
+        {id: 30, recipe_id: 5, step_number: 5, step_desc: 'Return pan to heat with a little more oil. Cook onion, carrot and mushrooms for about 5 minutes, until brown.'},
+        {id: 31, recipe_id: 5, step_number: 6, step_desc: 'Add the stroganoff spices and cook for 1 minute - paprika, garlic powder, onion powder, tarragon & mild curry powder. Stir until fragrant. Add the beef stock, cream, mustard, vinegar and peas and cook for about 3 minutes, until sauce is thickened and veggies are tender.'},
+        {id: 32, recipe_id: 5, step_number: 7, step_desc: 'Add beef strips back in the pan to warm through. Season to taste.'},
+        {id: 33, recipe_id: 5, step_number: 8, step_desc: 'To serve, spoon the potato mash onto the plates and top with the beef stroganoff.'},
       ]);
     });
 };
