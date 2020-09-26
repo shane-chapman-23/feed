@@ -2,8 +2,11 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import FavouriteListItem from './favouriteListItem'
+import ShoppingList from './ShoppingList'
 
-import {deleteFromFavourites} from '../actions'
+import {deleteFromFavourites, fetchIngredients} from '../actions'
+import RecipeList from './RecipeList'
+import { getIngredients } from '../api'
 
 /*
  * This is a stateful component to manage the state of the quantities
@@ -16,8 +19,16 @@ class MyFavourites extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      favourites: props.favourites
+      favourites: props.favourites,
+      showMore: false
     }
+  }
+
+  componentDidMount(){
+    getIngredients()
+          .then(ingredients => {
+            this.props.dispatch(fetchIngredients(ingredients))
+          })
   }
 
   deleteItem = (id) => {
@@ -25,6 +36,10 @@ class MyFavourites extends React.Component {
     this.setState({ favourites })
     this.props.deleteFromFavourites(id)
   }
+
+  clickHandler = () => {
+    this.setState({ showMore: !this.state.showMore })
+}
 
   render () {
     return (
@@ -46,14 +61,19 @@ class MyFavourites extends React.Component {
         <p className='actions'>
           <button onClick={this.props.viewRecipes}>View more Recipes</button>
         </p>
+        <button onClick={this.clickHandler}>Generate A Shopping List</button>
+        {this.state.showMore && <ShoppingList />}
       </div>
+        
+
     )
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    favourites: state.favourites
+    favourites: state.favourites,
+    ingredients: state.ingredients
   }
 }
 
@@ -61,6 +81,7 @@ const mapDispatchToProps =(dispatch) => {
   return {
     deleteFromFavourites: (id) => dispatch(deleteFromFavourites(id)),
     viewRecipes: () => dispatch({ type: 'CHANGE_PAGE', page: 'recipes' }),
+    dispatch
   }
 }
 
