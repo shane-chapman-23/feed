@@ -7,7 +7,6 @@ import Home from './Home'
 import RecipeList from './RecipeList'
 import MyFavourites from './MyFavourites'
 
-
 class App extends React.Component {
   render() {
     return (
