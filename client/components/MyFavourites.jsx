@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import FavouriteListItem from './favouriteListItem'
+import FavouriteListItem from './FavouriteListItem'
 
 import { deleteFromFavourites } from '../actions'
 
