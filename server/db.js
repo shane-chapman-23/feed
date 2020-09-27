@@ -5,13 +5,13 @@ const database = require('knex')(config)
 module.exports = {
     getRecipes,
     getIngredients,
-    getSteps
+    getSteps,
+    getFavourites
 }
 
 function getRecipes(db = database) {
     return db('recipes')
 }
-
 
 function getIngredients(id, db = database) {
         return db('quantities')
@@ -35,3 +35,17 @@ function getSteps(id, db = database) {
         })
 }
 
+function getFavourites (id = 1, db = database){
+  return db('users')
+    .select('favourites')
+    .where('id', id)
+    .then(parse)
+} 
+
+// JSON.parse()
+function parse(stuff) {
+  return stuff.map(users => {
+    users.favourites = JSON.parse(users.favourites)
+    return users
+  }) 
+}

@@ -1,19 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import FavouriteListItem from './favouriteListItem'
+import FavouriteListItem from './FavouriteListItem'
 import ShoppingList from './ShoppingList'
-
-import {deleteFromFavourites, fetchIngredients} from '../actions'
 import RecipeList from './RecipeList'
-import { getIngredients } from '../api'
 
-/*
- * This is a stateful component to manage the state of the quantities
- * before the update button is selected. The Redux state isn't
- * updated until the Update button is selected but this component's
- * state is updated each time a quantity changes.
- */
+import {deleteFromFavourites, fetchIngredients, fetchFavourites} from '../actions'
+import {getIngredients, getFavourites} from '../api'
 
 class MyFavourites extends React.Component {
   constructor (props) {
@@ -28,7 +21,11 @@ class MyFavourites extends React.Component {
     getIngredients()
           .then(ingredients => {
             this.props.dispatch(fetchIngredients(ingredients))
-          })
+          }) 
+          .then (() => getFavourites()) 
+          .then(favourites => {
+            this.props.dispatch(fetchFavourites(favourites))
+          }) 
   }
 
   deleteItem = (id) => {
@@ -42,6 +39,7 @@ class MyFavourites extends React.Component {
 }
 
   render () {
+  console.log(this.props.favourites)
     return (
       <div className='favourites'>
         <table>
@@ -54,6 +52,7 @@ class MyFavourites extends React.Component {
             {this.props.favourites.map((item, id) => {
               return (
                 <FavouriteListItem key={id} item={item} deleteFromFavourites={this.deleteItem}/>
+
               )
           })}
           </tbody>
@@ -63,8 +62,12 @@ class MyFavourites extends React.Component {
         </p>
         <button onClick={this.clickHandler}>Generate A Shopping List</button>
         {this.state.showMore && <ShoppingList />}
+
+        <div>
+          
+        </div>
       </div>
-        
+      
 
     )
   }
@@ -78,9 +81,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps =(dispatch) => {
   return {
-    deleteFromFavourites: (id) => dispatch(deleteFromFavourites(id)),
     viewRecipes: () => dispatch({ type: 'CHANGE_PAGE', page: 'recipes' }),
-    dispatch: action => action
+    deleteFromFavourites: (id) => dispatch(deleteFromFavourites(id)),  
+    dispatch: action => dispatch(action)
   }
 }
 
