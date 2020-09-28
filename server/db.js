@@ -49,9 +49,9 @@ function addFavourite({user_id, recipe_id}, db = database){
     return db('favourites').insert({user_id, recipe_id})
 }
 
-function deleteFavourite(id, db = database){
-    if(!id) return Promise.reject("id must be specified")
-    return db('favourites').where({id}).delete()
+function deleteFavourite(recipe_id, db = database){
+    if(!recipe_id) return Promise.reject("id must be specified")
+    return db('favourites').where({recipe_id}).delete()
 }
 
 

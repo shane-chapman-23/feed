@@ -52,9 +52,9 @@ export const addToFavourites = (recipe) => {
   }
 }
 
-export const removeFavourite = (id) => {
+export const removeFavourite = (recipe_id) => {
   return {
     type: REMOVE_FAVOURITE,
-    id
+    recipe_id
   }
 }

@@ -35,11 +35,10 @@ class MyFavourites extends React.Component {
   //   this.props.deleteFromFavourites(recipe_id)
   // }
 
-   deleteItem = () => {
-        let {id} = this.props.favourites
-        deleteFavourite(id)
+   deleteItem = (recipe_id) => {
+        deleteFavourite(recipe_id)
         .then (() => {
-            this.props.dispatch(removeFavourite(id))
+            this.props.dispatch(removeFavourite(recipe_id))
         })
     }
 
@@ -94,7 +93,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps =(dispatch) => {
   return {
     viewRecipes: () => dispatch({ type: 'CHANGE_PAGE', page: 'recipes' }),
-    removeFavourite: (id) => dispatch(removeFavourite(id)),  
+    removeFavourite: (recipe_id) => dispatch(removeFavourite(recipe_id)),  
     dispatch: action => dispatch(action)
   }
 }

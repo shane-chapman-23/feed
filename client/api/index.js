@@ -31,7 +31,7 @@ export function addFavourite(user_id, recipe_id){
         .then(res => res.body.id)
 }
 
-export function deleteFavourite(id){
-        return request.delete('/api/favourites/' + id)
+export function deleteFavourite(recipe_id){
+        return request.delete('/api/favourites/' + recipe_id)
         .then(res => res.body)
 }

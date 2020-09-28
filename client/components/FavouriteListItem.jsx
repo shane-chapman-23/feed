@@ -13,7 +13,7 @@ const deleteStyle = {color: 'red', marginRight: '7px', cursor: 'pointer'}
         <FaMinusCircle
           style={deleteStyle}
           role='button'
-          onClick={() => props.removeFavourite(props.recipe[recipe_id])}
+          onClick={() => props.removeFavourite(props.favourite.recipe_id)}
         />
       </td>
     </tr>

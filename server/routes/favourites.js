@@ -23,11 +23,11 @@ router.post('/api/favourites', (req, res) => {
 })
 
 //Delete favourite
-router.delete('/api/favourites/:id', (req, res) => {
-    let {id} = req.params
-    if (!id) return res.status(400).send("no id specified")
+router.delete('/api/favourites/:recipe_id', (req, res) => {
+    let {recipe_id} = req.params
+    if (!recipe_id) return res.status(400).send("no id specified")
 
-    db.deleteFavourite(Number(id))
+    db.deleteFavourite(Number(recipe_id))
         .then((recordsDeleted) => {
             res.sendStatus(200)
         })
