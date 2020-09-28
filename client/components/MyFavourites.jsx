@@ -45,10 +45,6 @@ class MyFavourites extends React.Component {
   }
 
   render () {
-  console.log(this.props.favourites[0]?.recipe_id)
-  console.log(this.props)
-
-
     return (
       <div className='favourites'>
         <table>
@@ -98,4 +94,3 @@ const mapDispatchToProps =(dispatch) => {
 }
 
 export default connect (mapStateToProps, mapDispatchToProps)(MyFavourites)
-//dispatch: action => dispatch(action)

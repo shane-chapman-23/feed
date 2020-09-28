@@ -7,8 +7,6 @@ exports.seed = (knex, Promise) => {
       email: 'shane@gmail.com',
       fname: 'Shane',
       lname: 'Chapman',
-      recipe_id: '0',
-      recipe_name: 'chicken'
     }
   ])
 }

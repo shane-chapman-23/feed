@@ -2,7 +2,6 @@ import React from 'react'
 
 const FavouriteItem = (props) => {
 const {recipe_id} = props.favourite
-console.log(props)
   return (
     <tr>
       <td><img src={props.recipe[recipe_id]?.image} width='100px' height='100px'></img></td>
@@ -15,4 +14,3 @@ console.log(props)
 }
 
 export default FavouriteItem
-//recipe[recipe_id]?

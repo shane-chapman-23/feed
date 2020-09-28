@@ -15,10 +15,9 @@ router.post('/api/favourites', (req, res) => {
 
 //Get favourites as javascript values
 router.get('/api/favourites/:id', (req, res) => { 
-  const id = 1 //req.params.id  
+  const id = 1 //req.params.id  need to hook up with authenticare
   db.getFavourites(id)
         .then(favourites => {
-        console.log(favourites)
         res.send(favourites)
     })
 })
