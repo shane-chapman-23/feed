@@ -22,10 +22,10 @@ class MyFavourites extends React.Component {
           .then(ingredients => {
             this.props.dispatch(fetchIngredients(ingredients))
           }) 
-          .then (() => getFavourites()) 
-          .then(favourites => {
-            this.props.dispatch(fetchFavourites(favourites))
-          }) 
+          // .then (() => getFavourites()) 
+          // .then(favourites => {
+          //   this.props.dispatch(fetchFavourites(favourites))
+          // }) 
   }
 
   deleteItem = (id) => {
@@ -39,7 +39,7 @@ class MyFavourites extends React.Component {
 }
 
   render () {
-  console.log(this.props.favourites)
+  
     return (
       <div className='favourites'>
         <table>
@@ -83,7 +83,7 @@ const mapDispatchToProps =(dispatch) => {
   return {
     viewRecipes: () => dispatch({ type: 'CHANGE_PAGE', page: 'recipes' }),
     deleteFromFavourites: (id) => dispatch(deleteFromFavourites(id)),  
-    dispatch: action => dispatch(action)
+    dispatch: action => action
   }
 }
 
