@@ -48,6 +48,18 @@ function getFavourites(id = 1, db = database){
     //.then(parse)
 } 
 
+// //Favourties
+// function addFavourite({recipe_id, recipe_name}, db = database){
+//     return db('users').insert({recipe_id, recipe_name})
+// }
+
+// function getFavourites(id = 1, db = database){
+//   return db('users')
+//     .select('recipe_id', 'recipe_name')
+//     //.where('id', id)
+//     //.then(parse)
+// } 
+
 // // JSON.parse()
 // function parse(stuff) {
 //   return stuff.map(users => {
