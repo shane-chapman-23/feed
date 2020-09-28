@@ -14,7 +14,7 @@ class App extends React.Component {
       <>
         <div className='App'>
           <Header />
-          <nav>
+          <nav className="printHidden">
             <button onClick={this.props.viewHome}>View Home</button>
             <button onClick={this.props.viewRecipes}>View Recipes</button> 
             <button onClick={this.props.viewFavourites}>View Favourites</button>
