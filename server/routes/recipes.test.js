@@ -9,7 +9,7 @@ jest.mock('../db', () => ({
 }))
 
 describe("GET /api/recipes", () => {
-    test("returns recipies when successful", () => {
+    test("returns recipes when successful", () => {
         getRecipes.mockImplementation(() => Promise.resolve([
             {id: 1, recipe_name: 'Beef Kababs'}
         ]))
