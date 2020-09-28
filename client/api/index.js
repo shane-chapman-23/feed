@@ -19,14 +19,19 @@ export function getSteps(id) {
 }
 
 //Favourites
+export function getFavourites(id){
+    return request  
+        .get(`/api/favourites/${id}`)//need to actually hook up id currently hard coded in db function
+        .then(res => res.body)
+}
+
 export function addFavourite(user_id, recipe_id){
     return request.post('/api/favourites')
         .send({user_id, recipe_id})
         .then(res => res.body.id)
 }
 
-export function getFavourites(id){
-    return request  
-        .get(`/api/favourites/${id}`)//need to actually hook up id currently hard coded in db function
+export function deleteFavourite(id){
+        return request.delete('/api/favourites/' + id)
         .then(res => res.body)
 }

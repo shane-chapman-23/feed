@@ -4,9 +4,8 @@ import {connect} from 'react-redux'
 import FavouriteListItem from './FavouriteListItem'
 import ShoppingList from './ShoppingList'
 
-
-import {deleteFromFavourites, fetchFavourites, fetchRecipes} from '../actions'
-import {getFavourites, getRecipes} from '../api'
+import {removeFavourite, fetchFavourites, fetchRecipes} from '../actions'
+import {getFavourites, deleteFavourite, getRecipes} from '../api'
 
 class MyFavourites extends React.Component {
   constructor (props) {
@@ -20,8 +19,6 @@ class MyFavourites extends React.Component {
   }
 
   componentDidMount() {
-
-
       getFavourites()
       .then(favourites => {
         this.props.dispatch(fetchFavourites(favourites))
@@ -32,11 +29,19 @@ class MyFavourites extends React.Component {
       })
   }
 
-  deleteItem = (recipe_id) => {
-    const favourites = this.state.favourites.filter(favourite => favourite.recipe_id !== recipe_id)
-    this.setState({ favourites })
-    this.props.deleteFromFavourites(recipe_id)
-  }
+  // deleteItem = (recipe_id) => {
+  //   const favourites = this.state.favourites.filter(favourite => favourite.recipe_id !== recipe_id)
+  //   this.setState({ favourites })
+  //   this.props.deleteFromFavourites(recipe_id)
+  // }
+
+   deleteItem = () => {
+        let {id} = this.props.favourites
+        deleteFavourite(id)
+        .then (() => {
+            this.props.dispatch(removeFavourite(id))
+        })
+    }
 
   clickHandler = () => {
     this.setState({ showMore: !this.state.showMore })
@@ -56,7 +61,7 @@ class MyFavourites extends React.Component {
           <tbody>
             {this.props.favourites.map((favourite, id) => {
               return (
-                <FavouriteListItem key={id} favourite={favourite} deleteFromFavourites={this.deleteItem} recipe={this.props.recipes}/>
+                <FavouriteListItem key={id} favourite={favourite} removeFavourite={this.deleteItem} recipe={this.props.recipes}/>
               ) 
           })}
           </tbody>
@@ -89,7 +94,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps =(dispatch) => {
   return {
     viewRecipes: () => dispatch({ type: 'CHANGE_PAGE', page: 'recipes' }),
-    deleteFromFavourites: (id) => dispatch(deleteFromFavourites(id)),  
+    removeFavourite: (id) => dispatch(removeFavourite(id)),  
     dispatch: action => dispatch(action)
   }
 }
