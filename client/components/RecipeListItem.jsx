@@ -32,6 +32,7 @@ class recipeItem extends React.Component {
 
     render() {
         const { recipe, dispatch } = this.props
+        const user = {id: 1}
         return (
             <>
                 <img style={{ backgroundImage: `url(${recipe.image})` }}></img>
@@ -56,7 +57,7 @@ class recipeItem extends React.Component {
                 {this.state.showMore &&
                     <div className="recipe-content">
                         <button className="show_less" onClick={this.clickHandler}>Show less</button>
-                        <button className="favourite-link" onClick={() => dispatch(addToFavourites(recipe), addFavourite(recipe.id, recipe.recipe_name), alert('added to favourites'))}>Add to Favourites</button>
+                        <button className="favourite-link" onClick={() => dispatch(addToFavourites(recipe), addFavourite(user.id, recipe.id), alert('added to favourites'))}>Add to Favourites</button>
                         <IngredientsList id={recipe.id} />
                         <StepsList id={recipe.id} />                     
                     </div>}

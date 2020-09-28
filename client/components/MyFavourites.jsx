@@ -5,13 +5,14 @@ import FavouriteListItem from './FavouriteListItem'
 import ShoppingList from './ShoppingList'
 import RecipeList from './RecipeList'
 
-import {deleteFromFavourites, fetchIngredients, fetchFavourites} from '../actions'
-import {getIngredients, getFavourites} from '../api'
+import {deleteFromFavourites, fetchIngredients, fetchFavourites, fetchRecipes} from '../actions'
+import {getIngredients, getFavourites, getRecipes} from '../api'
 
 class MyFavourites extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
+      recipe: props.recipe,
       favourites: props.favourites,
       showMore: false
     }
@@ -27,12 +28,16 @@ class MyFavourites extends React.Component {
           .then(favourites => {
             this.props.dispatch(fetchFavourites(favourites))
           }) 
+        .then (() => getRecipes()) 
+          .then(recipes => {
+            this.props.dispatch(fetchRecipes(recipes))
+          }) 
   }
 
-  deleteItem = (id) => {
-    const favourites = this.state.favourites.filter(item => item.id !== id)
+  deleteItem = (recipe_id) => {
+    const favourites = this.state.favourites.filter(favourite => favourite.recipe_id !== recipe_id)
     this.setState({ favourites })
-    this.props.deleteFromFavourites(id)
+    this.props.deleteFromFavourites(recipe_id)
   }
 
   clickHandler = () => {
@@ -40,7 +45,10 @@ class MyFavourites extends React.Component {
   }
 
   render () {
-  console.log(this.props.favourites)
+  console.log(this.props.favourites[0]?.recipe_id)
+  console.log(this.props)
+
+
     return (
       <div className='favourites'>
         <table>
@@ -50,11 +58,10 @@ class MyFavourites extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {this.props.favourites.map((item, id) => {
+            {this.props.favourites.map((favourite, id) => {
               return (
-                <FavouriteListItem key={id} item={item} deleteFromFavourites={this.deleteItem}/>
-
-              )
+                <FavouriteListItem key={id} favourite={favourite} deleteFromFavourites={this.deleteItem} recipe={this.props.recipes}/>
+              ) 
           })}
           </tbody>
         </table>
@@ -74,8 +81,10 @@ class MyFavourites extends React.Component {
   }
 }
 
+
 const mapStateToProps = (state) => {
   return {
+    recipes: state.recipes,
     favourites: state.favourites,
   }
 }

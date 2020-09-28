@@ -6,8 +6,8 @@ module.exports = router
 
 //Add favourites
 router.post('/api/favourites', (req, res) => {
-    let {recipe_id, recipe_name} = req.body
-        db.addFavourite({recipe_id, recipe_name})
+    let {user_id, recipe_id} = req.body
+        db.addFavourite({user_id, recipe_id})
             .then((ids) => {
                 res.status(201).json({id: ids[0]})
             })
@@ -18,7 +18,6 @@ router.get('/api/favourites/:id', (req, res) => {
   const id = 1 //req.params.id  
   db.getFavourites(id)
         .then(favourites => {
-        console.log(typeof favourites)
         console.log(favourites)
         res.send(favourites)
     })

@@ -37,33 +37,20 @@ function getSteps(id, db = database) {
 }
 
 //Favourties
-function addFavourite({recipe_id, recipe_name}, db = database){
-    return db('users').insert({recipe_id, recipe_name})
-}
+function getFavourites(id, db = database){
+  return db('favourites')
+    .select('user_id','recipe_id')
+    .where('user_id', id)
 
-function getFavourites(id = 1, db = database){
-  return db('users')
-    .select('recipe_id', 'recipe_name')
-    //.where('id', id)
-    //.then(parse)
 } 
 
-// //Favourties
-// function addFavourite({recipe_id, recipe_name}, db = database){
-//     return db('users').insert({recipe_id, recipe_name})
-// }
+function addFavourite({user_id, recipe_id}, db = database){
+    return db('favourites').insert({user_id, recipe_id})
+}
 
-// function getFavourites(id = 1, db = database){
-//   return db('users')
-//     .select('recipe_id', 'recipe_name')
-//     //.where('id', id)
-//     //.then(parse)
-// } 
 
-// // JSON.parse()
-// function parse(stuff) {
-//   return stuff.map(users => {
-//     users.favourites_ids = JSON.parse(users.favourites_ids)
-//     return users
-//   }) 
-// }
+
+
+
+
+
