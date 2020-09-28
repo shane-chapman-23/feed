@@ -1,32 +1,50 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 
 import FavouriteListItem from './FavouriteListItem'
+import ShoppingList from './ShoppingList'
 
-import { deleteFromFavourites } from '../actions'
 
-/*
- * This is a stateful component to manage the state of the quantities
- * before the update button is selected. The Redux state isn't
- * updated until the Update button is selected but this component's
- * state is updated each time a quantity changes.
- */
+import {deleteFromFavourites, fetchFavourites, fetchRecipes} from '../actions'
+import {getFavourites, getRecipes} from '../api'
 
 class MyFavourites extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      favourites: props.favourites
+      recipe: props.recipe,
+      favourites: props.favourites,
+      ingredients: props.ingredients,
+      showMore: false
     }
   }
 
-  deleteItem = (id) => {
-    const favourites = this.state.favourites.filter(item => item.id !== id)
+  componentDidMount() {
+
+
+      getFavourites()
+      .then(favourites => {
+        this.props.dispatch(fetchFavourites(favourites))
+      })
+      .then(() => getRecipes())
+      .then(recipes => {
+        this.props.dispatch(fetchRecipes(recipes))
+      })
+  }
+
+  deleteItem = (recipe_id) => {
+    const favourites = this.state.favourites.filter(favourite => favourite.recipe_id !== recipe_id)
     this.setState({ favourites })
-    this.props.deleteFromFavourites(id)
+    this.props.deleteFromFavourites(recipe_id)
+  }
+
+  clickHandler = () => {
+    this.setState({ showMore: !this.state.showMore })
   }
 
   render () {
+    console.log(this.props)
+
     return (
       <div className='favourites'>
         <table>
@@ -36,31 +54,43 @@ class MyFavourites extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {this.props.favourites.map((item, id) => {
+            {this.props.favourites.map((favourite, id) => {
               return (
-                <FavouriteListItem key={id} item={item} deleteFromFavourites={this.deleteItem}/>
-              )
+                <FavouriteListItem key={id} favourite={favourite} deleteFromFavourites={this.deleteItem} recipe={this.props.recipes}/>
+              ) 
           })}
           </tbody>
         </table>
         <p className='actions'>
           <button onClick={this.props.viewRecipes}>View more Recipes</button>
         </p>
+        <button onClick={this.clickHandler}>Generate A Shopping List</button>
+        {this.state.showMore && <ShoppingList ingredients={this.props.ingredients}/>}
+
+        <div>
+          
+        </div>
       </div>
+      
+
     )
   }
 }
 
+
 const mapStateToProps = (state) => {
   return {
-    favourites: state.favourites
+    recipes: state.recipes,
+    favourites: state.favourites,
+    ingredients: state.ingredients
   }
 }
 
 const mapDispatchToProps =(dispatch) => {
   return {
-    deleteFromFavourites: (id) => dispatch(deleteFromFavourites(id)),
     viewRecipes: () => dispatch({ type: 'CHANGE_PAGE', page: 'recipes' }),
+    deleteFromFavourites: (id) => dispatch(deleteFromFavourites(id)),  
+    dispatch: action => dispatch(action)
   }
 }
 

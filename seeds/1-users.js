@@ -6,7 +6,7 @@ exports.seed = (knex, Promise) => {
       password: 'password123',
       email: 'shane@gmail.com',
       fname: 'Shane',
-      lname: 'Chapman'
+      lname: 'Chapman',
     }
   ])
 }

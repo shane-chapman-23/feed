@@ -8,6 +8,7 @@ class IngredientsList extends React.Component {
     
 
     render() {
+        
         return (
             <>
                 <ul>{getRecipeIngredients(this.props.ingredients, this.props.id).map(ingredient => <li key={ingredient.ingredient_name}>{ingredient.ingredient_name} x {ingredient.ingredient_quantity}{ingredient.measurement_name}</li>)}</ul>
