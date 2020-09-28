@@ -57,16 +57,6 @@ exports.seed = (knex, Promise) => {
       rating: 5,
       food_category: ''
     },
-    { 
-      id: 7,
-      recipe_name: 'Hersheys Pie',
-      recipe_description: "$4.20 at Buger King",
-      image: 'img/food/hersheys_pie.png',
-      prep_time: 'Drive Thru',
-      cook_time: '0 mins',
-      rating: 5,
-      food_category: ''
-    }
   ])
 }
 
