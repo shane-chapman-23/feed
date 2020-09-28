@@ -6,6 +6,7 @@ module.exports = {
     getRecipes,
     getIngredients,
     getSteps,
+    addFavourite,
     getFavourites
 }
 
@@ -35,17 +36,22 @@ function getSteps(id, db = database) {
         })
 }
 
-function getFavourites (id = 1, db = database){
+//Favourties
+function addFavourite({recipe_name}, db = database){
+    return db('users').insert({recipe_name})
+}
+
+function getFavourites(id = 1, db = database){
   return db('users')
-    .select('favourites')
-    .where('id', id)
-    .then(parse)
+    .select('recipe_name')
+    //.where('id', id)
+    //.then(parse)
 } 
 
-// JSON.parse()
-function parse(stuff) {
-  return stuff.map(users => {
-    users.favourites = JSON.parse(users.favourites)
-    return users
-  }) 
-}
+// // JSON.parse()
+// function parse(stuff) {
+//   return stuff.map(users => {
+//     users.favourites_ids = JSON.parse(users.favourites_ids)
+//     return users
+//   }) 
+// }

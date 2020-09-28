@@ -18,11 +18,12 @@ class MyFavourites extends React.Component {
   }
 
   componentDidMount(){
-    getIngredients()
-          .then(ingredients => {
-            this.props.dispatch(fetchIngredients(ingredients))
-          }) 
-          .then (() => getFavourites()) 
+    // getIngredients()
+    //       .then(ingredients => {
+    //         this.props.dispatch(fetchIngredients(ingredients))
+    //       }) 
+          // .then (() => getFavourites()) 
+        getFavourites()
           .then(favourites => {
             this.props.dispatch(fetchFavourites(favourites))
           }) 
@@ -36,7 +37,7 @@ class MyFavourites extends React.Component {
 
   clickHandler = () => {
     this.setState({ showMore: !this.state.showMore })
-}
+  }
 
   render () {
   console.log(this.props.favourites)
@@ -60,8 +61,8 @@ class MyFavourites extends React.Component {
         <p className='actions'>
           <button onClick={this.props.viewRecipes}>View more Recipes</button>
         </p>
-        <button onClick={this.clickHandler}>Generate A Shopping List</button>
-        {this.state.showMore && <ShoppingList />}
+        {/* <button onClick={this.clickHandler}>Generate A Shopping List</button>
+        {this.state.showMore && <ShoppingList />} */}
 
         <div>
           
@@ -88,3 +89,4 @@ const mapDispatchToProps =(dispatch) => {
 }
 
 export default connect (mapStateToProps, mapDispatchToProps)(MyFavourites)
+//dispatch: action => dispatch(action)

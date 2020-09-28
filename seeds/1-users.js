@@ -7,7 +7,7 @@ exports.seed = (knex, Promise) => {
       email: 'shane@gmail.com',
       fname: 'Shane',
       lname: 'Chapman',
-      favourites: JSON.stringify(['1', '2', '3'])
+      recipe_name: 'chicken'
     }
   ])
 }
