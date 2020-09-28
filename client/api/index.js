@@ -19,9 +19,9 @@ export function getSteps(id) {
 }
 
 //Favourites
-export function addFavourite(recipe_name){
+export function addFavourite(recipe_id, recipe_name){
     return request.post('/api/favourites')
-        .send({recipe_name})
+        .send({recipe_id, recipe_name})
         .then(res => res.body.id)
 }
 

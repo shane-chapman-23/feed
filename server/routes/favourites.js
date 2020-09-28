@@ -6,8 +6,8 @@ module.exports = router
 
 //Add favourites
 router.post('/api/favourites', (req, res) => {
-    let {recipe_name} = req.body
-        db.addFavourite({recipe_name})
+    let {recipe_id, recipe_name} = req.body
+        db.addFavourite({recipe_id, recipe_name})
             .then((ids) => {
                 res.status(201).json({id: ids[0]})
             })
