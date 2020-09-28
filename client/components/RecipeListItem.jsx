@@ -31,6 +31,7 @@ class recipeItem extends React.Component {
     }
 
     render() {
+        
         const { recipe, dispatch } = this.props
         const user = {id: 1}
         return (

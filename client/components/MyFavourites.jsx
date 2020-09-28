@@ -3,10 +3,10 @@ import {connect} from 'react-redux'
 
 import FavouriteListItem from './FavouriteListItem'
 import ShoppingList from './ShoppingList'
-import RecipeList from './RecipeList'
 
-import {deleteFromFavourites, fetchIngredients, fetchFavourites, fetchRecipes} from '../actions'
-import {getIngredients, getFavourites, getRecipes} from '../api'
+
+import {deleteFromFavourites, fetchFavourites, fetchRecipes} from '../actions'
+import {getFavourites, getRecipes} from '../api'
 
 class MyFavourites extends React.Component {
   constructor (props) {
@@ -14,24 +14,22 @@ class MyFavourites extends React.Component {
     this.state = {
       recipe: props.recipe,
       favourites: props.favourites,
+      ingredients: props.ingredients,
       showMore: false
     }
   }
 
-  componentDidMount(){
-    // getIngredients()
-    //       .then(ingredients => {
-    //         this.props.dispatch(fetchIngredients(ingredients))
-    //       }) 
-          // .then (() => getFavourites()) 
-        getFavourites()
-          .then(favourites => {
-            this.props.dispatch(fetchFavourites(favourites))
-          }) 
-        .then (() => getRecipes()) 
-          .then(recipes => {
-            this.props.dispatch(fetchRecipes(recipes))
-          }) 
+  componentDidMount() {
+
+
+      getFavourites()
+      .then(favourites => {
+        this.props.dispatch(fetchFavourites(favourites))
+      })
+      .then(() => getRecipes())
+      .then(recipes => {
+        this.props.dispatch(fetchRecipes(recipes))
+      })
   }
 
   deleteItem = (recipe_id) => {
@@ -45,6 +43,8 @@ class MyFavourites extends React.Component {
   }
 
   render () {
+    console.log(this.props)
+
     return (
       <div className='favourites'>
         <table>
@@ -64,8 +64,8 @@ class MyFavourites extends React.Component {
         <p className='actions'>
           <button onClick={this.props.viewRecipes}>View more Recipes</button>
         </p>
-        {/* <button onClick={this.clickHandler}>Generate A Shopping List</button>
-        {this.state.showMore && <ShoppingList />} */}
+        <button onClick={this.clickHandler}>Generate A Shopping List</button>
+        {this.state.showMore && <ShoppingList ingredients={this.props.ingredients}/>}
 
         <div>
           
@@ -82,6 +82,7 @@ const mapStateToProps = (state) => {
   return {
     recipes: state.recipes,
     favourites: state.favourites,
+    ingredients: state.ingredients
   }
 }
 
