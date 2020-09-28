@@ -17,3 +17,16 @@ export function getSteps(id) {
     .get(`/api/steps/${id}`)
     .then(response => response.body)
 }
+
+//Favourites
+export function addFavourite(user_id, recipe_id){
+    return request.post('/api/favourites')
+        .send({user_id, recipe_id})
+        .then(res => res.body.id)
+}
+
+export function getFavourites(id){
+    return request  
+        .get(`/api/favourites/${id}`)//need to actually hook up id currently hard coded in db function
+        .then(res => res.body)
+}

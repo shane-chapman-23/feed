@@ -56,7 +56,7 @@ exports.seed = (knex, Promise) => {
       cook_time: '35 mins',
       rating: 5,
       food_category: ''
-    }
+    },
   ])
 }
 
