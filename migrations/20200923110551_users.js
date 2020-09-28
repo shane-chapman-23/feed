@@ -6,7 +6,6 @@ exports.up = (knex, Promise) => {
     table.string('email')
     table.string('fname')
     table.string('lname')
-    table.string('favourites')
     })  
 };
 

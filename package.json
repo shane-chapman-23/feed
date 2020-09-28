@@ -17,6 +17,7 @@
     "test": "jest --watchAll",
     "migrate": "npx knex migrate:latest",
     "seed": "npx knex seed:run",
+    "reset:db": "run-s migrate seed",
     "postinstall": "run-s migrate seed build"
   },
   "babel": {

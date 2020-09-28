@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {  getAllIngredients, getFavouriteIds, removeDuplicates, sortIngredients } from './helpers/helpers'
+import {  getAllIngredients, getFavouriteIds, sortIngredients } from './helpers/helpers'
 
 class ShoppingList extends React.Component {
     render() {
@@ -8,7 +8,7 @@ class ShoppingList extends React.Component {
         
         const sorted = sortIngredients(getAllIngredients(this.props.ingredients, favouriteIds))
         
-        console.log(removeDuplicates(sorted))   
+        console.log(this.props)   
          
         return(
             <>
