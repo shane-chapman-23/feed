@@ -47,29 +47,31 @@ class MyFavourites extends React.Component {
   }
 
   render () {
+    // console.log(this.props)
 
     return (
       <div className='favourites'>
-        <table>
-          <thead>
-            <tr>
-              <td><h4>Recipes</h4></td>
-            </tr>
-          </thead>
-          <tbody>
-            {this.props.favourites.map((favourite, id) => {
-              return (
-                <FavouriteListItem key={id} favourite={favourite} removeFavourite={this.deleteItem} recipe={this.props.recipes}/>
-              ) 
-          })}
-          </tbody>
-        </table>
-        <p className='actions'>
-          <button onClick={this.props.viewRecipes}>View more Recipes</button>
-        </p>
-        <button onClick={this.clickHandler}>Generate A Shopping List</button>
-        {this.state.showMore && <ShoppingList />}
-
+        <div className="printHidden">
+          <table>
+            <thead>
+              <tr>
+                <td><h4>Recipes</h4></td>
+              </tr>
+            </thead>
+            <tbody>
+              {this.props.favourites.map((favourite, id) => {
+                return (
+                  <FavouriteListItem key={id} favourite={favourite} removeFavourite={this.deleteItem} recipe={this.props.recipes}/>
+                ) 
+            })}
+            </tbody>
+          </table>
+          <p className='actions'>
+            <button onClick={this.props.viewRecipes}>View more Recipes</button>
+          </p>
+          <button onClick={this.clickHandler}>Generate A Shopping List</button>
+        </div>
+        {this.state.showMore && <ShoppingList ingredients={this.props.ingredients}/>}
         <div>
           
         </div>

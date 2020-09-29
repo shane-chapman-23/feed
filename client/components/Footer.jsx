@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer () {
   return (
-    <footer>
+    <footer className="printHidden">
         <p>Tea Time &copy;</p>
         <p>Shane, James, Chaz & Cheryl</p>
     </footer>
