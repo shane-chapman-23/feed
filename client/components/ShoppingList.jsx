@@ -1,9 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { PDFViewer } from '@react-pdf/renderer';
 import {  getAllIngredients, getFavouriteIds, removeDuplicates, sortIngredients } from './helpers/helpers'
-
-import MyShoppingList from './PdfRenderer'
 
 class ShoppingList extends React.Component {
 
