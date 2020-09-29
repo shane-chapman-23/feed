@@ -8,7 +8,6 @@ test('API fetches recipes from server', () => {
 
   return getRecipes()
     .then(recipes => {
-      console.log(recipes)
       expect(recipes.length).toBe(1)
       expect(recipes[0].id).toBe(1)
     })
