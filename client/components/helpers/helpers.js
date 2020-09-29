@@ -1,7 +1,7 @@
 export function getRecipeIngredients(ingredients, recipeId) {
     const ingredientsFilter = ingredients.filter(item => 
-        {return item.ingredients[0].recipe_id === recipeId})
-        return ingredientsFilter[0].ingredients
+        {return item.ingredients[0]?.recipe_id === recipeId})
+        return ingredientsFilter[0]?.ingredients
 }
 
 export function getRecipeSteps(steps, recipeId) {
@@ -31,19 +31,18 @@ export function sortIngredients(ingredientsList) {
         return 0
   })}
 
-// export function removeDuplicates(arr) {
-//     var newArray = []
-//     arr.map(item => newArray.find((i) => 
-//     {if (i.ingredient_name !== item.ingredient_name) {
-//         newArray.push(item) 
-//     } if(item.ingredient_name === i.ingredient_name) {
-//         item.ingredient_quantity += i.ingredient_quantity
-//     }}
-//     ))
-//     return newArray
-// }
+export function removeDuplicates(arr) {
+    var newArray = []
+    const ingredientExists = newArray.find(item => item.ingredient_name === arr.ingredient_name)
+    if (ingredientExists) {
+        newArray.ingredient_quantity += arr[0].ingredient_quantity
+    } if (!ingredientExists){
+        newArray.push(arr[0])
+    }
+    return newArray
+}
 
-      
+
     
 
 

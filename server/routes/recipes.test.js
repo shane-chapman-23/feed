@@ -17,7 +17,7 @@ describe("GET /api/recipes", () => {
             .get('/api/recipes')
             .then(res => {
                 expect(res.status).toBe(200)
-                expect(res.body.length).toBe(1)
+                expect(res.body.recipes.length).toBe(1)
             })
     })
     test("returns 500 if database fuction blows up", () => {

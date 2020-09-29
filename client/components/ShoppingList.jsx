@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { PDFViewer } from '@react-pdf/renderer';
-import {  getAllIngredients, getFavouriteIds, sortIngredients } from './helpers/helpers'
+import {  getAllIngredients, getFavouriteIds, removeDuplicates, sortIngredients } from './helpers/helpers'
 
 import MyShoppingList from './PdfRenderer'
 
@@ -23,7 +23,7 @@ class ShoppingList extends React.Component {
         <button className="printHidden" onClick={this.printWindow}>Save as Pdf</button>
       </div>
     )
-  }
+  } 
 }
 
 function mapStateToProps(globalState) {
