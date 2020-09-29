@@ -11,10 +11,11 @@ class ShoppingList extends React.Component {
         
         const sorted = sortIngredients(getAllIngredients(this.props.ingredients, favouriteIds))
         
-        console.log(removeDuplicates(sorted))   
+        const finalList = removeDuplicates(sorted)   
          
         return(
             <>
+            <ul>{finalList.map(item => <li key={item.ingredient_name}>{item.ingredient_name} x {item.ingredient_quantity}{item.measurement_name}</li>)}</ul>
             </>
         )
     }
