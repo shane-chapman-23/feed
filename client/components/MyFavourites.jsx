@@ -30,10 +30,10 @@ class MyFavourites extends React.Component {
   }
 
   deleteItem = (recipe_id) => {
-    deleteFavourite(recipe_id)
+    deleteFavourite(recipe_id)//api
       .then(() => {
-        this.props.dispatch(removeFavourite(recipe_id))
-      })
+        this.props.dispatch(removeFavourite(recipe_id))//action
+      }) 
   }
 
   clickHandler = () => {
@@ -53,7 +53,7 @@ class MyFavourites extends React.Component {
           <tbody>
             {this.props.favourites.map((favourite, id) => {
               return (
-                <FavouriteListItem key={id} favourite={favourite} removeFavourite={this.deleteItem} recipe={this.props.recipes} />
+                <FavouriteListItem key={id} favourite={favourite} kill={this.deleteItem} recipe={this.props.recipes}/>
               )
             })}
           </tbody>
