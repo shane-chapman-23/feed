@@ -1,12 +1,11 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { fetchRecipes} from '../actions'
-import { getRecipes} from '../api'
+import {fetchRecipes} from '../actions'
+import {getRecipes} from '../api'
 
 import RecipeListItem from './RecipeListItem'
 
 class RecipeList extends React.Component {
-
   componentDidMount() {
     getRecipes()
       .then(recipes => {
@@ -15,7 +14,6 @@ class RecipeList extends React.Component {
       .catch(err => {
         console.log(err)
       })
-
   }
 
   render() {
