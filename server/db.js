@@ -7,7 +7,8 @@ module.exports = {
     getIngredients,
     getSteps,
     addFavourite,
-    getFavourites
+    getFavourites,
+    deleteFavourite
 }
 
 function getRecipes(db = database) {
@@ -48,6 +49,10 @@ function addFavourite({user_id, recipe_id}, db = database){
     return db('favourites').insert({user_id, recipe_id})
 }
 
+function deleteFavourite(recipe_id, db = database){
+    if(!recipe_id) return Promise.reject("id must be specified")
+    return db('favourites').where({recipe_id}).delete()
+}
 
 
 
