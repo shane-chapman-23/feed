@@ -11,7 +11,7 @@ class ShoppingList extends React.Component {
         
         const sorted = sortIngredients(getAllIngredients(this.props.ingredients, favouriteIds))
         
-        console.log(removeDuplicates(sorted))   
+        console.log(sorted)   
          
         return(
             <>

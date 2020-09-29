@@ -1,6 +1,6 @@
 import {CHANGE_PAGE} from '../actions'
 
-function currentPage (state='home', action) {
+function currentPage (state='recipes', action) {
     switch (action.type) {
         case CHANGE_PAGE:
             return action.page
