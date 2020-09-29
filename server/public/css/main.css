@@ -20,7 +20,7 @@ header {
 nav {
   width: 100%;
   background-color: floralwhite;
-  padding-top: 10px
+  padding-top: 10px;
 }
 
 .logoImg img{
@@ -66,9 +66,6 @@ footer {
   padding-bottom: 10px;
 }
 
-ul {
-  list-style-type: none;
-}
 
 main{
   height: 100%;
@@ -127,7 +124,15 @@ main{
   text-decoration: underline;
 }
 
-ul li:before {
+ul {
+  list-style-type: none;
+}
+
+.knifeAndFork ul {
+  list-style-type: none;
+}
+
+.knifeAndFork ul li:before {
   content: '';
   display: inline-block;
   height: 15px;
@@ -153,19 +158,18 @@ button:focus{
   color: black; 
 }
 
+.navButton{
+  margin-left: 10px;
+}
+
 .show_more{
   margin: auto;
+  width: 91%;
+  position: absolute;
+  bottom: 25px;
 }
-
-.show_less{
-float: right;
-clear: right;
-}
-
-
-.favourite-link {
-float: right;
-clear: right;
+.favourites{
+float:right
 }
 
 .checkedStar {

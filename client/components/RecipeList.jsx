@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {fetchIngredients, fetchRecipes} from '../actions'
-import {getIngredients, getRecipes} from '../api'
+import {fetchRecipes} from '../actions'
+import {getRecipes} from '../api'
 
 import RecipeListItem from './RecipeListItem'
 
