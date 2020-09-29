@@ -7,15 +7,15 @@ function Header() {
 
     return (
         <header>
-            <div className="logoImg">
+            <div className="logoImg smallerLogo">
                 <a href='index.html'>
                     <img src={brandImg} alt="brand image" />
                 </a>
             </div>
-            <div className="logo">
+            <div className="logo printHidden">
                 {brandName}
             </div>
-            <div className="logoTag">
+            <div className="logoTag printHidden">
                 {brandTag}
             </div>
         </header>
