@@ -6,20 +6,21 @@ import Footer from './Footer'
 import RecipeList from './RecipeList'
 import MyFavourites from './MyFavourites'
 
-
 class App extends React.Component {
   render() {
     return (
       <>
         <div className='App'>
           <Header />
-          <nav>
+
+          <nav className="printHidden">
             <button className="navButton" onClick={this.props.viewRecipes}>Recipes</button> 
             <button className="navButton" onClick={this.props.viewFavourites}>Favourites</button> 
           </nav>
+
           <main>
               {this.props.currentPage == 'recipes' ? <RecipeList/> : ''}  
-              {this.props.currentPage == 'favourites' ? <MyFavourites /> : ''}              
+              {this.props.currentPage == 'favourites' ? <MyFavourites /> : ''}
           </main>
           <Footer />
         </div>

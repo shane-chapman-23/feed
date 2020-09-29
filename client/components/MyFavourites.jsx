@@ -43,6 +43,7 @@ class MyFavourites extends React.Component {
   render() {
     return (
       <div className='favourites'>
+        <div className="printHidden">
         <table>
           <thead>
             <tr>
@@ -59,7 +60,8 @@ class MyFavourites extends React.Component {
         </table>
         <button onClick={this.props.viewRecipes}>View more Recipes</button>
         <button onClick={this.clickHandler}>Generate A Shopping List</button>
-        {this.state.showMore && <ShoppingList />}
+      </div>      
+       {this.state.showMore && <ShoppingList ingredients={this.props.ingredients}/>}
       </div>
     )
   }

@@ -21,6 +21,10 @@ const id = req.params.id
     .then(callback => {
       res.json({ingredients: callback})
     })
+    .catch(err => {
+      console.log(err)
+        res.status(500).send('something went wrong')
+    })
 })
 
 //get recipe steps
@@ -29,5 +33,9 @@ router.get('/api/steps/:id', (req, res) => {
   db.getSteps(id)
     .then(callback => {
       res.json({steps: callback})
+    })
+    .catch(err => {
+      console.log(err)
+        res.status(500).send('something went wrong')
     })
 })

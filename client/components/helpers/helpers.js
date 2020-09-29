@@ -33,12 +33,15 @@ export function sortIngredients(ingredientsList) {
 
 export function removeDuplicates(arr) {
     var newArray = []
-    const ingredientExists = newArray.find(item => item.ingredient_name === arr.ingredient_name)
-    if (ingredientExists) {
-        newArray.ingredient_quantity += arr[0].ingredient_quantity
-    } if (!ingredientExists){
-        newArray.push(arr[0])
+    arr.forEach(ingredient => {
+        const existingIngredient = newArray.find(item => item.ingredient_name === ingredient.ingredient_name)
+        if (existingIngredient) {
+            existingIngredient.ingredient_quantity += ingredient.ingredient_quantity
+        } if (!existingIngredient) {
+            newArray.push(ingredient)
+        }
     }
+    )
     return newArray
 }
 

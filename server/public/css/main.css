@@ -1,3 +1,23 @@
+@media print {
+  .printHidden {
+    display: none !important;
+  }
+  li:before {
+    content: "";
+    background: white;
+    border: 1px solid black;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+  }
+  .smallerLogo {
+    display: inline-block;
+    width: 300px;
+    height: auto;
+  }
+}
+
 body {
   background-color: bisque;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
