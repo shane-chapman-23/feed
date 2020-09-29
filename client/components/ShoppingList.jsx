@@ -33,9 +33,3 @@ function mapStateToProps(globalState) {
     }
 }
 export default connect(mapStateToProps)(ShoppingList)
-
-{/* <div width='100%'>
-  <PDFViewer>
-    <MyShoppingList />
-  </PDFViewer>
-</div> */}
