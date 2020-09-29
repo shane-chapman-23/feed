@@ -10,15 +10,16 @@ class RecipeList extends React.Component {
     getRecipes()
       .then(recipes => {
         this.props.dispatch(fetchRecipes(recipes))
-      })  
+      })
       .catch(err => {
         console.log(err)
       })
+
   }
 
   render() {
     return(
-      <div className="recipe_list">
+      <div role="listitem" className="recipe_list">
           {this.props.recipes.map(recipe => <div className="card" key={recipe.id}><RecipeListItem recipe={recipe}/></div>)}
       </div>
     )

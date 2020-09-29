@@ -12,7 +12,7 @@ describe('Test getRecipes function', () => {
     test('Check function return correct number of recipes', () => {
         let promise = db.getRecipes(testDb)
            return promise.then((result) => {
-                expect(result.length).toBe(2)
+                expect(result.length).toBe(6)
             })
     })
 })
