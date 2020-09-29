@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 
 import Header from './Header'
 import Footer from './Footer'
-import Home from './Home'
 import RecipeList from './RecipeList'
 import MyFavourites from './MyFavourites'
 
@@ -15,12 +14,12 @@ class App extends React.Component {
         <div className='App'>
           <Header />
           <nav>
-            <button onClick={this.props.viewHome}>View Home</button>
-            <button onClick={this.props.viewRecipes}>View Recipes</button> 
-            <button onClick={this.props.viewFavourites}>View Favourites</button> 
+            {/* <button onClick={this.props.viewHome}>View Home</button> */}
+            <button onClick={this.props.viewRecipes}>Recipes</button> 
+            <button onClick={this.props.viewFavourites}>Favourites</button> 
           </nav>
           <main>
-              {this.props.currentPage == 'home' ? <Home/> : ''}  
+              {/* {this.props.currentPage == 'home' ? <Home/> : ''}   */}
               {this.props.currentPage == 'recipes' ? <RecipeList/> : ''}  
               {this.props.currentPage == 'favourites' ? <MyFavourites /> : ''}              
           </main>

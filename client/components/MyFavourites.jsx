@@ -47,7 +47,6 @@ class MyFavourites extends React.Component {
   }
 
   render () {
-    console.log(this.props)
 
     return (
       <div className='favourites'>
@@ -69,7 +68,7 @@ class MyFavourites extends React.Component {
           <button onClick={this.props.viewRecipes}>View more Recipes</button>
         </p>
         <button onClick={this.clickHandler}>Generate A Shopping List</button>
-        {this.state.showMore && <ShoppingList ingredients={this.props.ingredients}/>}
+        {this.state.showMore && <ShoppingList />}
 
         <div>
           
@@ -86,7 +85,7 @@ const mapStateToProps = (state) => {
   return {
     recipes: state.recipes,
     favourites: state.favourites,
-    ingredients: state.ingredients
+    
   }
 }
 
