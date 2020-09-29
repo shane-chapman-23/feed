@@ -19,13 +19,11 @@ class App extends React.Component {
             <button onClick={this.props.viewHome}>View Home</button>
             <button onClick={this.props.viewRecipes}>View Recipes</button> 
             <button onClick={this.props.viewFavourites}>View Favourites</button>
-            <button onClick={this.props.viewShoppingList}>Shopping List</button> 
           </nav>
           <main>
               {this.props.currentPage == 'home' ? <Home/> : ''}  
               {this.props.currentPage == 'recipes' ? <RecipeList/> : ''}  
               {this.props.currentPage == 'favourites' ? <MyFavourites /> : ''}
-              {this.props.currentPage == 'shoppingList' ? <ShoppingList /> : ''}
           </main>
           <Footer />
         </div>
@@ -45,7 +43,6 @@ function mapDispatchToProps(dispatch) {
     viewHome: () => dispatch({ type: 'CHANGE_PAGE', page: 'home' }),
     viewRecipes: () => dispatch({ type: 'CHANGE_PAGE', page: 'recipes' }),
     viewFavourites: () => dispatch({ type: 'CHANGE_PAGE', page: 'favourites' }),
-    viewShoppingList: () => dispatch({ type: 'CHANGE_PAGE', page: 'shoppingList' }),
   }
 }
 
