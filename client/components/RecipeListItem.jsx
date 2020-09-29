@@ -65,7 +65,7 @@ class recipeItem extends React.Component {
                         <FaTimesCircle style={deleteStyle} role='button' onClick={this.clickHandler}/>
                         <img style={{ backgroundImage: `url(${recipe.image})` }}></img>
                         <h1 className="recipe_name">{recipe.recipe_name}</h1>
-                        <button className="favourites" onClick={() => dispatch(addToFavourites(recipe), addFavourite(user.id, recipe.id), alert('added to favourites'))}>
+                        <button className="favouritesButton" onClick={() => dispatch(addToFavourites(recipe), addFavourite(user.id, recipe.id), alert('added to favourites'))}>
                             Add to favourites
                             <FaHeart style={favouriteStyle}/>
                         </button>
