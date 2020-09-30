@@ -2,7 +2,6 @@
   .printHidden {
     display: none !important;
   }
-<<<<<<< HEAD
   /* border around text in pdf */
   #printBorder{
     border: 1px solid black;
@@ -21,8 +20,6 @@
     column-count: 2;
   }
   /* boxes before the text lines */
-=======
->>>>>>> 1a97443787b25e0c4b4ac956644cfeff181dca32
   li:before {
     content: "";
     background: white;

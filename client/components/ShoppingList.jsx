@@ -5,11 +5,6 @@ import {  getAllIngredients, getFavouriteIds, removeDuplicates, sortIngredients 
 
 class ShoppingList extends React.Component {
 
-
-  printWindow = function () {
-    window.print()
-  }
-
   render() {
     const favouriteIds = getFavouriteIds(this.props.favourites)
     const sorted = sortIngredients(getAllIngredients(this.props.ingredients, favouriteIds))
@@ -20,7 +15,6 @@ class ShoppingList extends React.Component {
         <p>
           {finalList.map(list => <li style={{listStyleType: 'none'}} key={list.ingredient_name}>{list.ingredient_name} {list.ingredient_quantity}{list.measurement_name}</li>)}
         </p>
-        <button className="printHidden" onClick={this.printWindow}>Save as Pdf</button>
       </div>
     )
   } 
