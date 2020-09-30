@@ -1,7 +1,5 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { fetchSteps } from '../actions'
-import { getSteps } from '../api'
 import { getRecipeSteps } from './helpers/helpers'
 
 class StepsList extends React.Component {
