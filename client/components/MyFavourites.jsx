@@ -41,13 +41,12 @@ class MyFavourites extends React.Component {
   }
 
   printWindow = () => {
-    var element = document.getElementById("printBorder");
-    var element2 = document.getElementById("showColor");
-    element2.classList.toggle("hide2");
-    element.classList.toggle("recipe-content");
-    element.classList.add("noScreen");
-    window.print()
-    .then(this.toggleClass())
+    var element = document.getElementById("printBorder"); // gets html from PrintBorder
+    var element2 = document.getElementById("showColor"); // gets html from 'showColor
+    element2.classList.toggle("hide2"); // toggles off class 'hide2' from 'showColor'
+    element.classList.toggle("recipe-content"); // toggles off class 'recipe-content' from 'printBorder'
+    element.classList.add("noScreen"); // adds class 'noScreen' to 'printBorder'
+    window.print() // pops a print alert/ prints the window
   }
 
   render() {
