@@ -40,32 +40,44 @@ class MyFavourites extends React.Component {
     this.setState({ showMore: !this.state.showMore })
   }
 
+  printWindow = () => {
+    var element = document.getElementById("printBorder");
+    var element2 = document.getElementById("showColor");
+    element2.classList.toggle("hide2");
+    element.classList.toggle("recipe-content");
+    element.classList.add("noScreen");
+    window.print()
+    .then(this.toggleClass())
+  }
+
   render() {
     return (
       <div className='favourites'>
         <div className="printHidden">
-        <table>
-          <thead>
-            <tr>
-              <td><h4>Recipes</h4></td>
-            </tr>
-          </thead>
-          <tbody>
-            {this.props.favourites.map((favourite, id) => {
-              return (
-                <FavouriteListItem key={id} favourite={favourite} removeFavourite={this.deleteItem} recipe={this.props.recipes} />
-              )
-            })}
-          </tbody>
-        </table>
-        <button onClick={this.props.viewRecipes}>View more Recipes</button>
-        <button onClick={this.clickHandler}>Generate A Shopping List</button>
-      </div>    
-      {this.state.showMore && <div className="hide" onClick={this.clickHandler}></div>}  
-       {this.state.showMore && 
-        <div className="recipe-content">
-       <ShoppingList ingredients={this.props.ingredients}/>
-       </div>}
+          <table>
+            <thead>
+              <tr>
+                <td><h4>Recipes</h4></td>
+              </tr>
+            </thead>
+            <tbody>
+              {this.props.favourites.map((favourite, id) => {
+                return (
+                  <FavouriteListItem key={id} favourite={favourite} removeFavourite={this.deleteItem} recipe={this.props.recipes} />
+                )
+              })}
+            </tbody>
+          </table>
+          <button onClick={this.props.viewRecipes}>View more Recipes</button>
+          <button onClick={this.clickHandler}>Generate A Shopping List</button>
+        </div>
+        {this.state.showMore && <div id="showColor" className="hide hide2" onClick={this.clickHandler}></div>}
+        {this.state.showMore &&
+          <div id="printBorder" className="recipe-content">
+            <ShoppingList ingredients={this.props.ingredients}/>
+            <button className="printHidden" onClick={this.printWindow}>Save as Pdf</button>
+          </div>
+        }
       </div>
     )
   }
