@@ -7,7 +7,7 @@ const favourites = (state = [], action) => {
     case ADD_TO_FAVOURITES:
       return [...state, action.recipe]
     case REMOVE_FAVOURITE:
-      return state.filter(item => item.id !== action.id)
+      return state.filter(item => item.recipe_id !== action.recipe_id)
     default:
       return state
   }
