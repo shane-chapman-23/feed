@@ -29,7 +29,7 @@ export function sortIngredients(ingredientsList) {
         if (prev.ingredient_name > current.ingredient_name) 
           return 1
         return 0
-  })}
+})}
 
 export function removeDuplicates(arr) {
     var newArray = []
@@ -43,6 +43,19 @@ export function removeDuplicates(arr) {
     }
     )
     return newArray
+}
+
+export function isFavourited(arr, recipeId) {
+    const favourited = arr.includes(recipeId)
+    return favourited
+    // if (arr.length === 0) {
+    //     return {color: 'deepPink', float: 'right', height: '25px', width: '25px', padding: '5px', marginLeft: '10px'}
+    // }
+    // if(!favourited){
+    //     return {color: 'deepPink', float: 'right', height: '25px', width: '25px', padding: '5px', marginLeft: '10px'}
+    // } if(favourited){
+    //     return {color: 'grey', float: 'right', height: '25px', width: '25px', padding: '5px', marginLeft: '10px'}
+    // }
 }
 
 
