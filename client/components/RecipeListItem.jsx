@@ -88,6 +88,3 @@ function mapStateToProps (state)  {
 
 export default connect(mapStateToProps)(recipeItem)
 
-// isFavourited(favouriteIds, this.props.recipe.id) ? favouriteStylePink : favouriteStyle
-// {color: 'grey', float: 'right', height: '25px', width: '25px', padding: '5px', marginLeft: '10px'}
-// {color: 'DeepPink', float: 'right', height: '25px', width: '25px', padding: '5px', marginLeft: '10px'}
