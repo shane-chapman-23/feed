@@ -70,13 +70,13 @@ class MyFavourites extends React.Component {
         </table>
         <button onClick={this.props.viewRecipes}>View more Recipes</button>
         <button onClick={this.clickHandler}>Generate A Shopping List</button>
-      </div>    
-      {this.state.showMore && <div id="showColor" className="hide hide2" onClick={this.clickHandler}></div>}  
-       {this.state.showMore && 
+        </div>    
+        {this.state.showMore && <div id="showColor" className="hide hide2" onClick={this.clickHandler}></div>}  
+        {this.state.showMore && 
         <div id="printBorder" className="recipe-content">
-       <ShoppingList ingredients={this.props.ingredients}/>
-       <button className="printHidden" onClick={this.printWindow}>Save as Pdf</button>
-       </div>}
+          <ShoppingList ingredients={this.props.ingredients}/>
+          <button className="printHidden" onClick={this.printWindow}>Save as Pdf</button>
+        </div>}
       </div>
     )
   }
