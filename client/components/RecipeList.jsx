@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {fetchRecipes} from '../actions'
-import {getRecipes} from '../api'
+import {fetchRecipes, fetchFavourites} from '../actions'
+import {getRecipes, getFavourites} from '../api'
 
 import RecipeListItem from './RecipeListItem'
 
@@ -10,6 +10,12 @@ class RecipeList extends React.Component {
     getRecipes()
       .then(recipes => {
         this.props.dispatch(fetchRecipes(recipes))
+      })
+      .then(() => {
+        getFavourites()
+          .then(favourites => {
+            this.props.dispatch(fetchFavourites(favourites))
+          })
       })
       .catch(err => {
         console.log(err)
