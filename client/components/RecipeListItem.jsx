@@ -6,11 +6,14 @@ import IngredientsList from './IngredientsList'
 import StepsList from './StepsList'
 import {FaTimesCircle} from 'react-icons/fa'
 import {FaHeart} from 'react-icons/fa'
+import { getFavouriteIds, isFavourited} from './helpers/helpers'
 
 class recipeItem extends React.Component {
 
     state = {
-        showMore: false
+        showMore: false,
+        style: {color: 'grey', float: 'right', height: '25px', width: '25px', padding: '5px', marginLeft: '10px'}
+        
     }
 
     componentDidMount() {
@@ -27,16 +30,17 @@ class recipeItem extends React.Component {
             })
 
     }
-
+     
+    
     clickHandler = () => {
         this.setState({ showMore: !this.state.showMore })
     }
+   
 
     render() {
-        const deleteStyle = {color: 'red', cursor: 'pointer', position: 'fixed', display: 'absolute', top: '7%', left: '80%', height: '25px', width: '25px'}
-        const favouriteStyle = {color: 'DeepPink', float: 'right', height: '25px', width: '25px', padding: '5px', marginLeft: '10px'}
         const { recipe, dispatch } = this.props
         const user = {id: 1}
+        const deleteStyle = {color: 'red', cursor: 'pointer', position: 'fixed', display: 'absolute', top: '7%', left: '80%', height: '25px', width: '25px'}
         return (
             <>
                 <img style={{ backgroundImage: `url(${recipe.image})` }}></img>
@@ -65,10 +69,9 @@ class recipeItem extends React.Component {
                         <FaTimesCircle style={deleteStyle} role='button' onClick={this.clickHandler}/>
                         <img style={{ backgroundImage: `url(${recipe.image})` }}></img>
                         <h1 className="recipe_name">{recipe.recipe_name}</h1>
-                        <button className="favouritesButton" onClick={() => dispatch(addToFavourites(recipe), addFavourite(user.id, recipe.id), alert('added to favourites'))}>
-                            Add to favourites
-                            <FaHeart style={favouriteStyle}/>
-                        </button>
+                        <FaHeart id='notFavourited' role='button' style={{color: isFavourited(getFavouriteIds(this.props.favourites), this.props.recipe.id)? 'deepPink' : 'grey',
+                             float: 'right', height: '25px', width: '25px', padding: '5px', marginLeft: '10px'}} 
+                             onClick={() => isFavourited(getFavouriteIds(this.props.favourites), this.props.recipe.id)? null : (dispatch(addToFavourites({user_id: user.id, recipe_id: recipe.id})), addFavourite(user.id, recipe.id))}/>
                         <IngredientsList id={recipe.id} />
                         <StepsList id={recipe.id} />                     
                 </div>}
@@ -77,4 +80,11 @@ class recipeItem extends React.Component {
     }
 }
 
-export default connect()(recipeItem)
+function mapStateToProps (state)  {
+    return {
+        favourites: state.favourites
+    }
+}
+
+export default connect(mapStateToProps)(recipeItem)
+

@@ -3,9 +3,7 @@ import {FaMinusCircle} from 'react-icons/fa'
 import {connect} from 'react-redux'
 
 class FavouriteItem extends React.Component  {
-  render() {
-   
-    
+  render() {    
     const { recipe_id } = this.props.favourite
     const deleteStyle = { color: 'red', marginRight: '7px', cursor: 'pointer' }
     return (
