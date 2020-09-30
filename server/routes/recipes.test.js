@@ -11,7 +11,7 @@ jest.mock('../db', () => ({
 describe("GET /api/recipes", () => {
     test("returns recipes when successful", () => {
         getRecipes.mockImplementation(() => Promise.resolve([
-            {id: 1, recipe_name: 'Beef Kababs'}
+            {id: 1, recipe_name: 'Beef Kebabs'}
         ]))
         return request(server)
             .get('/api/recipes')
@@ -20,7 +20,7 @@ describe("GET /api/recipes", () => {
                 expect(res.body.recipes.length).toBe(1)
             })
     })
-    test("returns 500 if database fuction blows up", () => {
+    test("returns 500 if database function blows up", () => {
         getRecipes.mockImplementation(() => Promise.reject('error'))
         return request(server)
             .get('/api/recipes')
@@ -30,3 +30,4 @@ describe("GET /api/recipes", () => {
             })
     })
 })
+//Need tests for other recipe routes
