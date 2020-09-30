@@ -30,9 +30,9 @@ class MyFavourites extends React.Component {
   }
 
   deleteItem = (recipe_id) => {
-    deleteFavourite(recipe_id)//api
+    deleteFavourite(recipe_id)
       .then(() => {
-        this.props.dispatch(removeFavourite(recipe_id))//action
+        this.props.dispatch(removeFavourite(recipe_id))
       }) 
   }
 
