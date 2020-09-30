@@ -1,28 +1,7 @@
-/* dispayed on screen, set to true */
-@media screen
-{
-    .noPrint{}
-    .noScreen{display:none;}
-}
-
-/* happens on print */
 @media print {
   .printHidden {
     display: none !important;
   }
-  /* border around text in pdf */
-  #printBorder{
-    border: 1px solid black;
-    border-radius: 10%;
-    color: black;
-    font-size: 23px;
-  }
-  /* centering text */
-  .printSpacing{
-    margin-top: 10px;
-    margin-left: 28%;
-  }
-  /* boxes before the text lines */
   li:before {
     content: "";
     background: white;
@@ -32,15 +11,11 @@
     height: 15px;
     margin-right: 5px;
   }
-  /* changes logo size */
   .smallerLogo {
     display: inline-block;
     width: 300px;
     height: auto;
   }
-  /* display on screen set to false */
-    .noPrint{display:none;}
-    .noScreen{}
 }
 
 body {
@@ -245,13 +220,9 @@ top: 0;
 left: 0;
 height: 100%;
 width: 100%;
+background-color: black;
 opacity: 0.8;
 z-index: 1;
-}
-/* seperate background-color to seperate class
-  To fire a button effect and not css on print change */
-.hide2 {
-background-color: black;
 }
 
 /* Designing for scroll-bar */ 
