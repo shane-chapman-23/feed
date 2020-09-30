@@ -63,7 +63,7 @@ class recipeItem extends React.Component {
                 <p className="food_category">{recipe.food_category}</p>
                 <button className="show_more" onClick={this.clickHandler}>Show more</button>
 
-                {this.state.showMore && <div className="hide" onClick={this.clickHandler}></div>}
+                {this.state.showMore && <div className="hide hide2" onClick={this.clickHandler}></div>}
                 {this.state.showMore &&
                     <div className="recipe-content">
                         <FaTimesCircle style={deleteStyle} role='button' onClick={this.clickHandler}/>
