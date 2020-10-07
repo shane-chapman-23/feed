@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { fetchRecipes } from '../actions'
 import { getRecipes } from '../api'
+import RecipeListItem from './RecipeListItem'
 
 
 class RecipeList extends React.Component {
@@ -19,7 +20,9 @@ class RecipeList extends React.Component {
         return (
             <>
             <h1>Recipe List</h1>
-            <ul>{this.props.recipes.map(recipe => <li role= 'listitem' key={recipe.id}>{recipe.recipe_name}</li>)}</ul>
+            <div className='recipeList'>
+            <ul>{this.props.recipes.map(recipe => <li role= 'listitem' key={recipe.id}><RecipeListItem recipe={recipe}/></li>)}</ul>
+            </div>
             </>
             
         )
