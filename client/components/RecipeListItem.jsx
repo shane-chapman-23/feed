@@ -35,7 +35,7 @@ class RecipeListItem extends React.Component {
                 
                 : 
                 
-                <div className='recipeCardFront'>
+                <div className='recipeCardFront' onClick={this.clickHandler}>
                     <img style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${this.props.recipe.image})` }}></img>
                     <h2>{this.props.recipe.recipe_name}</h2>
                     <p id='description'>
@@ -46,7 +46,7 @@ class RecipeListItem extends React.Component {
                         <br></br>
                         cook: {this.props.recipe.cook_time}
                     </p>
-                    <button onClick={this.clickHandler}>+</button>
+                
                 </div>}
             </>
         )
