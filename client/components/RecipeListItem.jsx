@@ -30,7 +30,6 @@ class RecipeListItem extends React.Component {
                 <div className='recipeCardGhost'></div>
                 <div className='recipeCardBack'>
                     <RecipeInfoList recipe={this.props.recipe}/>
-                    <button onClick={this.clickHandler}>+</button>
                 </div>
                 </> 
                 
