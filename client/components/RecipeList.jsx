@@ -19,7 +19,6 @@ class RecipeList extends React.Component {
     render() {
         return (
             <>
-            <h1>Recipe List</h1>
             <div className='recipeList'>
             <ul>{this.props.recipes.map(recipe => <li role= 'listitem' key={recipe.id}><RecipeListItem recipe={recipe}/></li>)}</ul>
             </div>
