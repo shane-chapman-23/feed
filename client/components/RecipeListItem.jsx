@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getIngredients, getSteps } from '../api'
-import { fetchIngredients, fetchSteps } from '../actions'
+
 import RecipeInfoList from './RecipeInfoList'
 
 
@@ -53,11 +52,5 @@ class RecipeListItem extends React.Component {
     }
 }
 
-function mapStateToProps (state) {
-    return {
-        ingredients: state.ingredients,
-        steps: state.steps
-    }
-}
 
-export default connect(mapStateToProps)(RecipeListItem)
+export default connect()(RecipeListItem)
