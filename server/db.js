@@ -25,6 +25,7 @@ function getIngredients(id, db = database) {
             })   
 }
 
+
 function getSteps(id, db = database) {
     return db('steps')
         .join('recipes', 'recipes.id', 'steps.recipe_id')
