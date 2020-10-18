@@ -27,6 +27,7 @@ class RecipeInfoList extends React.Component {
             <div className='ingredients' style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url(${this.props.recipe.image})` }}> 
             <div className='recipeName'><h2>{this.props.recipe.recipe_name}</h2></div>
             <ul><span className='bold'>Ingredients</span><br></br>{this.props.ingredients.map(ingredient => <li role= 'listitem' key={ingredient.ingredient_name}>{ingredient.ingredient_quantity} {ingredient.measurement_name} {ingredient.ingredient_name}</li>)}</ul>
+            <button>add to shopping list</button>
             </div>
             <div className='steps'>
             <ul>{this.props.steps.map(step => <li role= 'listitem' key={step.step_number}>{step.step_number}. {step.step_desc}</li>)}</ul>  

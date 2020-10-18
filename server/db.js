@@ -6,6 +6,11 @@ module.exports = {
     getRecipes,
     getIngredients,
     getSteps,
+    getShoppingList,
+    // addShoppingList,
+    // deleteShoppingList
+    
+    
    
 }
 
@@ -35,6 +40,14 @@ function getSteps(id, db = database) {
             return result
         })
 }
+
+function getShoppingList( db = database){
+    return db('shoppingList')
+      
+  
+  } 
+  
+
 
 
 

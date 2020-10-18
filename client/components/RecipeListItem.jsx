@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+
 import RecipeInfoList from './RecipeInfoList'
 
 
@@ -20,6 +21,7 @@ class RecipeListItem extends React.Component {
     render(){
         
         
+        
         return(
             <>
                 
@@ -29,6 +31,7 @@ class RecipeListItem extends React.Component {
                 <div className='recipeCardGhost'></div>
                 <div className='recipeCardBack'>
                     <RecipeInfoList recipe={this.props.recipe}/>
+                
                 </div>
                 </> 
                 
@@ -44,6 +47,9 @@ class RecipeListItem extends React.Component {
                         prep: {this.props.recipe.prep_time}
                         <br></br>
                         cook: {this.props.recipe.cook_time}
+                    </p>
+                    <p id='servingSize'>
+                        serves {this.props.recipe.serving_size}
                     </p>
                 
                 </div>}
