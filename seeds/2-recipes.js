@@ -7,7 +7,9 @@ exports.seed = (knex, Promise) => {
       prep_time: '25-35 mins',
       cook_time: '30-40 mins',
       rating: 5,
-      food_category: ''
+      food_category: '',
+      serving_size: 2,
+      added: false
     },
     { id: 2,
       recipe_name: 'Thai Beef Stir-Fry & Makrut Lime Rice',
@@ -16,7 +18,9 @@ exports.seed = (knex, Promise) => {
       prep_time: '25-35 mins',
       cook_time: '35-45 mins',
       rating: 5,
-      food_category: ''
+      food_category: '',
+      serving_size: 2,
+      added: false
     },
     { id: 3,
       recipe_name: 'Korean Beef Tacos',
@@ -25,7 +29,9 @@ exports.seed = (knex, Promise) => {
       prep_time: '20 mins',
       cook_time: '30 mins',
       rating: 5,
-      food_category: ''
+      food_category: '',
+      serving_size: 2,
+      added: false
     },
     { 
       id: 4,
@@ -35,7 +41,9 @@ exports.seed = (knex, Promise) => {
       prep_time: '20 mins',
       cook_time: '30 mins',
       rating: 5,
-      food_category: ''
+      food_category: '',
+      serving_size: 2,
+      added: false
     },
     { 
       id: 5,
@@ -45,7 +53,9 @@ exports.seed = (knex, Promise) => {
       prep_time: '20 mins',
       cook_time: '30 mins',
       rating: 5,
-      food_category: ''
+      food_category: '',
+      serving_size: 2,
+      added: false
     },
     { 
       id: 6,
@@ -55,7 +65,9 @@ exports.seed = (knex, Promise) => {
       prep_time: '20 mins',
       cook_time: '35 mins',
       rating: 5,
-      food_category: ''
+      food_category: '',
+      serving_size: 2,
+      added: false
     },
   ])
 }

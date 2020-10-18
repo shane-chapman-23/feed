@@ -30,17 +30,8 @@
 }
 
 
-.recipeCardFront:hover #description{
-    opacity: 1;
-    transition: 0.4s ease-in-out;
 
-}
 
-.recipeCardFront:hover #times{
-    opacity: 1;
-    transition: 0.4s ease-in-out;
-
-}
 
 .recipeCardFront>img {
     width: 100%;
@@ -60,7 +51,7 @@
     left: 50%;
     width: 80%;
     transform: translate(-50%, -50%);
-    transition: 0.2s ease-in-out
+    transition: 0.2s
     
     
     
@@ -88,6 +79,11 @@
     opacity:0;
     
 }
+.recipeCardFront:hover #description{
+    opacity: 1;
+    transition: 0.4s ease-in-out;
+
+}
 
 #times {
     position: absolute;
@@ -97,10 +93,32 @@
     left: 50%;
     width: 80%;
     transform: translate(-50%, -50%);
-    /* padding: 10px; */
     font-size: 12px;
     font-weight: bold;
     opacity:0;
+}
+.recipeCardFront:hover #times{
+    opacity: 1;
+    transition: 0.4s ease-in-out;
+
+}
+
+#servingSize {
+    position: absolute;
+    color: white;
+    margin: 0;
+    bottom:20px;
+    left: 25px;
+    width: 80%;
+    font-size: 12px;
+    font-weight: bold;
+    opacity:0;
+}
+
+.recipeCardFront:hover #servingSize{
+    opacity: 1;
+    transition: 0.4s ease-in-out;
+
 }
 
 .recipeList>ul{
@@ -174,6 +192,16 @@
     background-size: cover;
     padding: 0;
     
+}
+
+.ingredients button{
+    display: absolute;
+    color: white;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 20px;
 }
 
 .ingredients>ul {

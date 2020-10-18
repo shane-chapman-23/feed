@@ -13,6 +13,7 @@ router.get('/api/recipes', (req, res) => {
         })
 })
 
+
 //Get ingredients by id
 router.get('/api/ingredients/:id', (req, res) => {
     const id = req.params.id

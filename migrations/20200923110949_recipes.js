@@ -8,6 +8,8 @@ exports.up = (knex, Promise) => {
     table.string('cook_time')
     table.integer('rating')
     table.string('food_category')
+    table.integer('serving_size')
+    table.boolean('added')
     })
 };
 
