@@ -35,4 +35,11 @@ export function fetchShoppingList(shoppingList) {
       shoppingList
     }
   }
+
+export function addToShoppingList(recipe) {
+    return {
+        type: ADD_TO_LIST,
+        recipe
+    }
+}
   
