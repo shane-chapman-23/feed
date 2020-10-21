@@ -23,3 +23,8 @@ export function getShoppingList(){
         .then(res => res.body.shoppingList)
 }
 
+export function addShoppingList(recipe_id) {
+    return request.post('/api/shoppinglist')
+        .send({recipe_id})
+        .then(res => res.body)
+}

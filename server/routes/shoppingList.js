@@ -13,4 +13,12 @@ router.get('/api/shoppinglist', (req, res) => {
         })
 })
 
+router.post('/api/shoppinglist', (req, res) => {
+  let recipe_id = req.body
+    db.addShoppingList(recipe_id)
+      .then((ids) => {
+        res.status(201).json({id: ids[0]})
+      })
+})
+
 
