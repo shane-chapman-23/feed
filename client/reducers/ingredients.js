@@ -1,5 +1,6 @@
 import {FETCH_INGREDIENTS} from '../actions'
 
+
 const initialState = []
 
 export default function ingredientsReducer(state = initialState, action) {

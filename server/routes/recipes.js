@@ -26,6 +26,19 @@ router.get('/api/ingredients/:id', (req, res) => {
             res.status(500).send('something went wrong')
         })
     })
+
+
+    //gets all ingredients
+    router.get('/api/ingredients', (req, res) => {
+        db.getAllIngredients()
+          .then(callback => {
+            res.json({allIngredients: callback})
+          })
+          .catch(err => {
+            console.log(err)
+              res.status(500).send('something went wrong')
+          })
+      })
     
     //get recipe steps by id
     router.get('/api/steps/:id', (req, res) => {

@@ -1,5 +1,6 @@
 export const FETCH_RECIPES = 'FETCH_RECIPES'
 export const FETCH_INGREDIENTS = 'FETCH_INGREDIENTS'
+export const FETCH_ALL_INGREDIENTS = 'FETCH_ALL_INGREDIENTS'
 export const FETCH_STEPS = 'FETCH_STEPS'
 export const FETCH_LIST = 'FETCH_LIST'
 export const ADD_TO_LIST = 'ADD_TO_LIST'
@@ -18,6 +19,13 @@ export function fetchIngredients(ingredients){
     return {
         type: FETCH_INGREDIENTS,
         ingredients
+    }
+}
+
+export function fetchAllIngredients(allIngredients){
+    return {
+        type: FETCH_ALL_INGREDIENTS,
+        allIngredients
     }
 }
 
