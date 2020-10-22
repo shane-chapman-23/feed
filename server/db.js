@@ -5,6 +5,7 @@ const database = require('knex')(config)
 module.exports = {
     getRecipes,
     getIngredients,
+    getAllIngredients,
     getSteps,
     getShoppingList,
     addShoppingList
@@ -28,6 +29,17 @@ function getIngredients(id, db = database) {
             .then((result) => {
                 return result
             })   
+}
+
+function getAllIngredients(db = database) {
+    return db('quantities')
+        .join('recipes', 'recipes.id', 'quantities.recipe_id')
+        .join('ingredients', 'ingredients.id', 'quantities.ingredient_id' )
+        .join('measurements', 'measurements.id', 'quantities.measurement_id')
+        .select('recipe_id', 'ingredient_name', 'ingredient_quantity', 'measurement_name')
+        .then((result) => {
+            return result
+        })   
 }
 
 

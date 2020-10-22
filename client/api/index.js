@@ -11,6 +11,12 @@ export function getIngredients(id) {
     .then(response => response.body.ingredients)
 }
 
+export function getAllIngredients() {
+    return request
+    .get('/api/ingredients')
+    .then(response => response.body.allIngredients)
+}
+
 
 export function getSteps(id) {
     return request

@@ -1,7 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchShoppingList } from '../actions'
-import { getShoppingList } from '../api'
+import { fetchAllIngredients, fetchShoppingList } from '../actions'
+import {  getAllIngredients, getShoppingList } from '../api'
+import { getRecipeIds } from './helpers/shoppingListHelpers'
+import { getRecipeIngredients } from './helpers/shoppingListHelpers'
 
 
 class ShoppingList extends React.Component {
@@ -11,10 +13,19 @@ class ShoppingList extends React.Component {
         .then(shoppingList => {
             this.props.dispatch(fetchShoppingList(shoppingList))
         })
+        .then(() => {
+            getAllIngredients()
+                .then(allIngredients => {
+                    this.props.dispatch(fetchAllIngredients(allIngredients))
+                })
+        })
     }
     render(){
+
+        const recipeIds = getRecipeIds(this.props.shoppingList)
+        const shoppingList = getRecipeIngredients(recipeIds, this.props.allIngredients)
+        console.log(shoppingList)
         
-        console.log(this.props.shoppingList)
         return(
             <>
             Hi
@@ -25,7 +36,7 @@ class ShoppingList extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        ingredients: state.ingredients,
+        allIngredients: state.allIngredients,
         shoppingList: state.shoppingList
        
     }
