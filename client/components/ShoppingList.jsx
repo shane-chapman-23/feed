@@ -2,8 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { fetchAllIngredients, fetchShoppingList } from '../actions'
 import {  getAllIngredients, getShoppingList } from '../api'
-import { getRecipeIds } from './helpers/shoppingListHelpers'
-import { getRecipeIngredients } from './helpers/shoppingListHelpers'
+import { getRecipeIds, removeDuplicates } from './helpers/helpers'
+import { getRecipeIngredients } from './helpers/helpers'
 
 
 class ShoppingList extends React.Component {
@@ -24,7 +24,8 @@ class ShoppingList extends React.Component {
 
         const recipeIds = getRecipeIds(this.props.shoppingList)
         const shoppingList = getRecipeIngredients(recipeIds, this.props.allIngredients)
-        console.log(shoppingList)
+        const finalList = removeDuplicates(shoppingList)
+        console.log(finalList)
         
         return(
             <>
