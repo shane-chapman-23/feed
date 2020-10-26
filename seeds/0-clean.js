@@ -7,6 +7,6 @@ exports.seed = function (knex, Promise) {
   .then(empty('measurements'))
   .then(empty('ingredients'))
   .then(empty('recipes'))
-  .then(empty('shoppingList'))
+  .then(empty('myRecipes'))
   
 }

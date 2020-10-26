@@ -1,17 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchAllIngredients, fetchShoppingList } from '../actions'
-import {  getAllIngredients, getShoppingList } from '../api'
+import { fetchAllIngredients, fetchMyRecipes } from '../actions'
+import {  getAllIngredients, getMyRecipes } from '../api'
 import { getRecipeIds, removeDuplicates } from './helpers/helpers'
 import { getRecipeIngredients } from './helpers/helpers'
 
 
-class ShoppingList extends React.Component {
+class MyRecipes extends React.Component {
 
     componentDidMount() {
-        getShoppingList()
-        .then(shoppingList => {
-            this.props.dispatch(fetchShoppingList(shoppingList))
+        getMyRecipes()
+        .then(myRecipes => {
+            this.props.dispatch(fetchMyRecipes(myRecipes))
         })
         .then(() => {
             getAllIngredients()
@@ -22,14 +22,16 @@ class ShoppingList extends React.Component {
     }
     render(){
 
-        const recipeIds = getRecipeIds(this.props.shoppingList)
+        const recipeIds = getRecipeIds(this.props.myRecipes)
         const shoppingList = getRecipeIngredients(recipeIds, this.props.allIngredients)
-        const finalList = removeDuplicates(shoppingList)
-        console.log(finalList)
+        const finalShoppingList = removeDuplicates(shoppingList)
+       
         
         return(
             <>
-            Hi
+            <ul>
+            {finalShoppingList.map(ingredient => <li key={ingredient.ingredient_name}>{ingredient.ingredient_quantity} {ingredient.measurement_name} {ingredient.ingredient_name}</li>)}
+            </ul>
             </>
         )
     }
@@ -38,9 +40,9 @@ class ShoppingList extends React.Component {
 function mapStateToProps(state) {
     return {
         allIngredients: state.allIngredients,
-        shoppingList: state.shoppingList
+        myRecipes: state.myRecipes
        
     }
 }
 
-export default connect(mapStateToProps)(ShoppingList)
+export default connect(mapStateToProps)(MyRecipes)

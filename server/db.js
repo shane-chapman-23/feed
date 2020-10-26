@@ -7,8 +7,8 @@ module.exports = {
     getIngredients,
     getAllIngredients,
     getSteps,
-    getShoppingList,
-    addShoppingList
+    getMyRecipes,
+    addMyRecipes
     
     
     
@@ -53,13 +53,13 @@ function getSteps(id, db = database) {
         })
 }
 
-function getShoppingList( db = database){
-    return db('shoppingList')
+function getMyRecipes( db = database){
+    return db('myRecipes')
       
 }
 
-function addShoppingList({recipe_id}, db = database){
-    return db('shoppingList')
+function addMyRecipes({recipe_id}, db = database){
+    return db('myRecipes')
         .insert({recipe_id})
 }
   

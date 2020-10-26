@@ -24,13 +24,13 @@ export function getSteps(id) {
     .then(response => response.body.steps)
 }
 
-export function getShoppingList(){
-    return request.get('/api/shoppinglist')
-        .then(res => res.body.shoppingList)
+export function getMyRecipes(){
+    return request.get('/api/myrecipes')
+        .then(res => res.body.myRecipes)
 }
 
-export function addShoppingList(recipe_id) {
-    return request.post('/api/shoppinglist')
+export function addMyRecipes(recipe_id) {
+    return request.post('/api/myrecipes')
         .send({recipe_id})
         .then(res => res.body)
 }
