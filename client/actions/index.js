@@ -2,9 +2,9 @@ export const FETCH_RECIPES = 'FETCH_RECIPES'
 export const FETCH_INGREDIENTS = 'FETCH_INGREDIENTS'
 export const FETCH_ALL_INGREDIENTS = 'FETCH_ALL_INGREDIENTS'
 export const FETCH_STEPS = 'FETCH_STEPS'
-export const FETCH_LIST = 'FETCH_LIST'
-export const ADD_TO_LIST = 'ADD_TO_LIST'
-export const REMOVE_LIST = 'REMOVE_LIST'
+export const FETCH_MY_RECIPES = 'FETCH_MY_RECIPES'
+export const ADD_TO_MY_RECIPES = 'ADD_TO_MY_RECIPES'
+
 
 
 
@@ -37,16 +37,16 @@ export function fetchSteps(steps){
     }
 }
 
-export function fetchShoppingList(shoppingList) {
+export function fetchMyRecipes(myRecipes) {
     return {
-      type: FETCH_LIST,
-      shoppingList
+      type: FETCH_MY_RECIPES,
+      myRecipes
     }
   }
 
-export function addToShoppingList(recipe) {
+export function addToMyRecipes(recipe) {
     return {
-        type: ADD_TO_LIST,
+        type: ADD_TO_MY_RECIPES,
         recipe
     }
 }

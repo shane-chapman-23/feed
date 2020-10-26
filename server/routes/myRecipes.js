@@ -5,17 +5,17 @@ const router = express.Router()
 module.exports = router
 
 
-router.get('/api/shoppinglist', (req, res) => { 
-  db.getShoppingList()
-        .then(callback => res.json({shoppingList: callback}))
+router.get('/api/myrecipes', (req, res) => { 
+  db.getMyRecipes()
+        .then(callback => res.json({myRecipes: callback}))
         .catch(err => {
             res.status(500).send('something went wrong')
         })
 })
 
-router.post('/api/shoppinglist', (req, res) => {
+router.post('/api/myrecipes', (req, res) => {
   let recipe_id = req.body
-    db.addShoppingList(recipe_id)
+    db.addMyRecipes(recipe_id)
       .then((ids) => {
         res.status(201).json({id: ids[0]})
       })
