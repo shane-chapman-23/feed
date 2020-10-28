@@ -1,5 +1,19 @@
-export function getRecipeIds(shoppingList) {
-    return shoppingList.map(item => item.recipe_id)
+export function getRecipeIds(arr) {
+    return arr.map(item => item.recipe_id)
+}
+
+export function getRecipesById(recipeIds, recipes) {
+    const newArr = []
+    recipeIds.map(id => recipes.map(recipe => {
+        if (recipe.id === id.recipe_id){
+            newArr.push(recipe)
+        }}))
+        return newArr
+}
+
+export function recipeExists(arr, recipeId) {
+    const exists = arr.includes(recipeId)
+    return exists
 }
 
 export function getRecipeIngredients(recipeIds, ingredients){

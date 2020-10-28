@@ -1,9 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addMyRecipes, getIngredients, getSteps } from '../api'
-import { addToMyRecipes, fetchIngredients, fetchSteps } from '../actions'
+
+
+import { addMyRecipes, getIngredients, getMyRecipes, getSteps } from '../api'
+import { addToMyRecipes, fetchIngredients, fetchMyRecipes, fetchSteps } from '../actions'
+import { recipeExists, getRecipeIds } from './helpers/helpers'
 
 class RecipeInfoList extends React.Component {
+
+    state = {
+        added: recipeExists(getRecipeIds(this.props.myRecipes), this.props.recipe.id)
+    }
 
     componentDidMount() {
 
@@ -17,15 +24,31 @@ class RecipeInfoList extends React.Component {
                         this.props.dispatch(fetchSteps(steps))
                     })
             })
+            .then(() => {
+                getMyRecipes()
+                    .then(myRecipes => {
+                        this.props.dispatch(fetchMyRecipes(myRecipes))
+                    })
+            })
 
     }
+
+    
+
+    
+    
 
     clickHandler() {
+        this.setState({added: !this.state.added})
 
     }
 
-
+    
     render(){
+
+        console.log(getRecipeIds(this.props.myRecipes))
+
+                
         return(
             <>
             
@@ -36,8 +59,11 @@ class RecipeInfoList extends React.Component {
             <br></br>
             {this.props.ingredients.map(ingredient => <li role= 'listitem' key={ingredient.ingredient_name}>{ingredient.ingredient_quantity} {ingredient.measurement_name} {ingredient.ingredient_name}</li>)}
             </ul>
-            <button onClick={() => this.props.dispatch(addToMyRecipes(this.props.recipe.id), addMyRecipes(this.props.recipe.id))} >add to shopping list</button>
-            </div>
+            {this.state.added? 
+            <button>remove from my recipes</button> :
+            <button onClick={() => {this.clickHandler(), this.props.dispatch(addToMyRecipes(this.props.recipe.id), addMyRecipes(this.props.recipe.id))}} >add to my recipes</button>
+            }
+            </div> 
             <div className='steps'>
             <ul>{this.props.steps.map(step => <li role= 'listitem' key={step.step_number}>{step.step_number}. {step.step_desc}</li>)}</ul>  
             </div>
@@ -51,6 +77,7 @@ function mapStateToProps(state) {
         ingredients: state.ingredients,
         steps: state.steps,
         myRecipes: state.myRecipes
+        
     }
 }
 
