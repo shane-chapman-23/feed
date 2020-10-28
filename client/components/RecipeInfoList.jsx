@@ -24,13 +24,6 @@ class RecipeInfoList extends React.Component {
                         this.props.dispatch(fetchSteps(steps))
                     })
             })
-            .then(() => {
-                getMyRecipes()
-                    .then(myRecipes => {
-                        this.props.dispatch(fetchMyRecipes(myRecipes))
-                    })
-            })
-
     }
 
     
