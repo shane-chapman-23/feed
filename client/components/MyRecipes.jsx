@@ -1,9 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchAllIngredients, fetchMyRecipes } from '../actions'
-import {  getAllIngredients, getMyRecipes } from '../api'
-import { getRecipeIds, removeDuplicates } from './helpers/helpers'
-import { getRecipeIngredients } from './helpers/helpers'
+
+import { fetchAllIngredients, fetchMyRecipes, fetchRecipes } from '../actions'
+import {  getAllIngredients, getMyRecipes, getRecipes } from '../api'
+import { getRecipeIds, removeDuplicates, getRecipesById, getRecipeIngredients } from './helpers/helpers'
+import RecipeListItem from './RecipeListItem'
 
 
 class MyRecipes extends React.Component {
@@ -12,6 +13,12 @@ class MyRecipes extends React.Component {
         getMyRecipes()
         .then(myRecipes => {
             this.props.dispatch(fetchMyRecipes(myRecipes))
+        })
+        .then(() => {
+            getRecipes()
+                .then(recipes => {
+                    this.props.dispatch(fetchRecipes(recipes))
+                })
         })
         .then(() => {
             getAllIngredients()
@@ -25,12 +32,20 @@ class MyRecipes extends React.Component {
         const recipeIds = getRecipeIds(this.props.myRecipes)
         const shoppingList = getRecipeIngredients(recipeIds, this.props.allIngredients)
         const finalShoppingList = removeDuplicates(shoppingList)
+        const myRecipesList = getRecipesById(this.props.myRecipes, this.props.recipes)
+        
+        
        
         
         return(
             <>
+            <div className='recipeList'>
             <ul>
-            {finalShoppingList.map(ingredient => <li key={ingredient.ingredient_name}>{ingredient.ingredient_quantity} {ingredient.measurement_name} {ingredient.ingredient_name}</li>)}
+                {myRecipesList.map(recipe => <li role="listitem" key={recipe.id}><RecipeListItem myRecipes={this.props.myRecipes} recipe={recipe}/></li>)}
+            </ul>
+            </div>
+            <ul>
+            {/* {finalShoppingList.map(ingredient => <li key={ingredient.ingredient_name}>{ingredient.ingredient_quantity} {ingredient.measurement_name} {ingredient.ingredient_name}</li>)} */}
             </ul>
             </>
         )
@@ -40,7 +55,8 @@ class MyRecipes extends React.Component {
 function mapStateToProps(state) {
     return {
         allIngredients: state.allIngredients,
-        myRecipes: state.myRecipes
+        myRecipes: state.myRecipes,
+        recipes: state.recipes
        
     }
 }
