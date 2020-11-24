@@ -2,8 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 
-import { addMyRecipes, getIngredients, getMyRecipes, getSteps } from '../api'
-import { addToMyRecipes, fetchIngredients, fetchMyRecipes, fetchSteps } from '../actions'
+import { addMyRecipes, getIngredients, getMyRecipes, getSteps, removeMyRecipes } from '../api'
+import { addToMyRecipes, fetchIngredients, fetchMyRecipes, fetchSteps, removeRecipe } from '../actions'
 import { recipeExists, getRecipeIds } from './helpers/helpers'
 
 class RecipeInfoList extends React.Component {
@@ -24,6 +24,12 @@ class RecipeInfoList extends React.Component {
                         this.props.dispatch(fetchSteps(steps))
                     })
             })
+            .then(() => {
+                getMyRecipes()
+                    .then(myRecipes => {
+                        this.props.dispatch(fetchMyRecipes(myRecipes))
+                    })
+            })
     }
 
     
@@ -38,9 +44,6 @@ class RecipeInfoList extends React.Component {
 
     
     render(){
-
-        console.log(getRecipeIds(this.props.myRecipes))
-
                 
         return(
             <>
@@ -53,7 +56,7 @@ class RecipeInfoList extends React.Component {
             {this.props.ingredients.map(ingredient => <li role= 'listitem' key={ingredient.ingredient_name}>{ingredient.ingredient_quantity} {ingredient.measurement_name} {ingredient.ingredient_name}</li>)}
             </ul>
             {this.state.added? 
-            <button>remove from my recipes</button> :
+            <button onClick={() => {this.clickHandler(), this.props.dispatch(removeRecipe(this.props.recipe.id), removeMyRecipes(this.props.recipe.id))}} >remove from my recipes</button> :
             <button onClick={() => {this.clickHandler(), this.props.dispatch(addToMyRecipes(this.props.recipe.id), addMyRecipes(this.props.recipe.id))}} >add to my recipes</button>
             }
             </div> 
