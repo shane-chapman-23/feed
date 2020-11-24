@@ -5,6 +5,8 @@ class NavBar extends React.Component {
     render() {
         return(
             <>
+            <Link to='/'>Home</Link>
+            <br></br>
             <Link to='/myrecipes'>My Recipes</Link>
             </>
         )

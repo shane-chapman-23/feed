@@ -34,3 +34,8 @@ export function addMyRecipes(recipe_id) {
         .send({recipe_id})
         .then(res => res.body)
 }
+
+export function removeMyRecipes(recipe_id){
+    return request.delete('/api/myrecipes/' + recipe_id)
+    .then(res => res.body)
+}

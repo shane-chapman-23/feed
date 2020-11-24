@@ -8,7 +8,8 @@ module.exports = {
     getAllIngredients,
     getSteps,
     getMyRecipes,
-    addMyRecipes
+    addMyRecipes,
+    removeMyRecipes
     
     
     
@@ -63,7 +64,10 @@ function addMyRecipes({recipe_id}, db = database){
         .insert({recipe_id})
 }
   
-
+function removeMyRecipes({recipe_id}, db = database){
+    if(!recipe_id) return Promise.reject("id must be specified")
+    return db('favourites').where({recipe_id}).delete()
+}
 
 
 

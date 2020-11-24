@@ -4,6 +4,7 @@ export const FETCH_ALL_INGREDIENTS = 'FETCH_ALL_INGREDIENTS'
 export const FETCH_STEPS = 'FETCH_STEPS'
 export const FETCH_MY_RECIPES = 'FETCH_MY_RECIPES'
 export const ADD_TO_MY_RECIPES = 'ADD_TO_MY_RECIPES'
+export const REMOVE_RECIPE = 'REMOVE_RECIPE'
 
 
 
@@ -51,3 +52,9 @@ export function addToMyRecipes(recipe) {
     }
 }
   
+export const removeRecipe = (recipe) => {
+    return {
+      type: REMOVE_RECIPE,
+      recipe
+    }
+  }
